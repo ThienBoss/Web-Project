@@ -14,7 +14,7 @@
                 <li><a href="">Rent player</a></li>
                 <li><a href="">Buy Card</a></li>
                 <li><a href="">Ranking</a></li>
-                <li><a href="">Login</a></li>
+                <li><a href="Login.html">Login</a></li>
             </ul>
         </nav>
         <script>
@@ -28,14 +28,46 @@
                 }
                 scroll1 = scroll2;
             };
+            function signUp() {
+                var x = document.getElementById("Signup");
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                }
+                var y = document.getElementById("Login");
+                if (y.style.display === "block") {
+                    y.style.display = "none";
+                }
+            }
+            function login() {
+                var x = document.getElementById("Login");
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                }
+                var y = document.getElementById("Signup");
+                if (y.style.display === "block") {
+                    y.style.display = "none";
+                }
+            }
         </script>
-        <form class="box" action="" method="post">
-            <input type="text" name="name" placeholder="Username">
-            <input type="password" name="password" placeholder="Password">
-            <input type="submit" value="LOGIN">
-            <a href="" style="color: red; padding-left: 40%;">Forgot password?</a><br><br>
-            <hr>
-            <input type="button" value="SIGN UP">
-        </form>
+        <div id="Login" style="display: block" class="box">
+            <form action="" method="post">
+                <input type="text" name="loginName" placeholder="Username">
+                <input type="password" name="loginPassword" placeholder="Password">
+                <input type="submit" value="LOGIN">
+                <a href="" style="color: red; padding-left: 40%;">Forgot password?</a><br><br>
+                <hr>
+                <input type="button" value="SIGN UP" onclick="signUp()">
+            </form>
+        </div>
+        <div id="Signup" style="display: none" class="box">
+            <form action="" method="post">
+                <input type="text" name="signUpName" placeholder="Username">
+                <input type="password" name="signUpPassword" placeholder="Password">
+                <input type="password" name="signUpRePassword" placeholder="Retype Password">
+                <input type="submit" value="SIGN UP">
+                <hr>
+                <input type="button" value="LOGIN" onclick="login()">
+            </form>
+        </div>
     </body>
 </html>
