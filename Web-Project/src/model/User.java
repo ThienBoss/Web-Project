@@ -1,7 +1,7 @@
 package model;
 
 public class User {
-private String fulName;
+    private String fulName;
 	private String email;
 	private String userName;
 	private String password;

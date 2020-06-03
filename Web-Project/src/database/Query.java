@@ -1,13 +1,14 @@
 package database;
-
 import java.sql.*;
 import java.util.List;
+
 public class Query {
-    private java.sql.Statement st = null;
+    private static Statement st = null;
     public Query () throws ClassNotFoundException, SQLException {
         st = DatabaseConnection.connectToDatabase().createStatement();
         }
-    public ResultSet executeStamentQuery(String query) {
+
+    public static ResultSet executeStatementQuery(String query) {
         ResultSet rs = null;
         try {
             rs = st.executeQuery(query);
@@ -27,8 +28,19 @@ public class Query {
         return select;
     }
     
-    public static String insertToTable (String tableName, List<String[]> listOfValues) {
+    public static String insertToTable (String tableName, String[] listOfValues) {
         String insert = "INSERT INTO "  + tableName +  " VALUES " + listOfValues; 
+        String value = "";
+        String lastValue = listOfValues[listOfValues.length - 1];
+        for (int i  = 0; i < listOfValues.length; i++) {
+            value = listOfValues[i];
+            if(value.equals(lastValue)) {
+            insert += value ;
+            } else {
+            insert += value + ",";
+            }
+
+        }
         return insert;
     }
 
