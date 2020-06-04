@@ -13,14 +13,16 @@ import model.User;
 public class UserDao implements DAO<User>, Closeable {
 	private DatabaseConnection databaseConnection;
     private ResultSet rs ;
+    private Statement st;
 
-	public UserDao() throws ClassNotFoundException {
-		this.databaseConnection = new DatabaseConnection();
+	public UserDao() throws ClassNotFoundException, SQLException {
+		databaseConnection = new DatabaseConnection();
+		st = databaseConnection.connectToDatabase().createStatement();
 	}
 	@Override
 	public List<User> getAll() throws SQLException {
         List<User> user = new ArrayList<User>();
-        rs = Query.executeStatementQuery(Query.selectAll(TablesName.getUser()));
+        rs = st.executeQuery(Query.selectAll(TablesName.getUser()));
          while(rs.next()) {
            user.add(new User(
                        rs.getString(1),
@@ -43,7 +45,7 @@ public class UserDao implements DAO<User>, Closeable {
             Integer.toString(t.getDonated())
         };
 
-        rs = Query.executeStatementQuery(Query.insertToTable(TablesName.getUser(),userAttributes));
+        rs = st.executeUpdate(Query.insertToTable(TablesName.getUser(), userAttributes))
 	}
 	@Override
 	public void update(User t) throws SQLException {

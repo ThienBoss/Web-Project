@@ -3,20 +3,10 @@ import java.sql.*;
 import java.util.List;
 
 public class Query {
-    private static Statement st = null;
+    private static Statement st ;
     public Query () throws ClassNotFoundException, SQLException {
-        st = DatabaseConnection.connectToDatabase().createStatement();
-        }
+     }
 
-    public static ResultSet executeStatementQuery(String query) {
-        ResultSet rs = null;
-        try {
-            rs = st.executeQuery(query);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return rs;
-    }
     
     public static String selectAll (String tableName ) {
         String selectAll =  "SELECT * FROM " + tableName;
@@ -29,18 +19,23 @@ public class Query {
     }
     
     public static String insertToTable (String tableName, String[] listOfValues) {
-        String insert = "INSERT INTO "  + tableName +  " VALUES " + listOfValues; 
+        String insert = "INSERT INTO "  + tableName +  " VALUES ( " ; 
         String value = "";
         String lastValue = listOfValues[listOfValues.length - 1];
         for (int i  = 0; i < listOfValues.length; i++) {
             value = listOfValues[i];
+            System.out.println(value);
             if(value.equals(lastValue)) {
-            insert += value ;
-            } else {
+            insert += value + ");";
+            } else if (CheckType.isInteger(value)){
             insert += value + ",";
+            } else {
+            insert += "'" + value + "'" + "," ; 
             }
 
         }
+
+        System.out.println(insert);
         return insert;
     }
 

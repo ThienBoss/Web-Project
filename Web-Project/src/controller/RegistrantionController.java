@@ -22,9 +22,10 @@ public class RegistrantionController extends HttpServlet {
        
     /**
      * @throws ClassNotFoundException 
+     * @throws SQLException 
      * @see HttpServlet#HttpServlet()
      */
-    public RegistrantionController() throws ClassNotFoundException {
+    public RegistrantionController() throws ClassNotFoundException, SQLException {
         super();
         userDao = new UserDao();
     }
@@ -32,12 +33,13 @@ public class RegistrantionController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
         response.setContentType("text/html");
-        String fullName = request.getParameter("fullNames");
-        String email = request.getParameter("emails");
-        String userName = request.getParameter("usersnames");
-        String password = request.getParameter("passwords");
-        int age = request.getParameter("ages");
-        int donate = request.getParameter("donates");
+        String fullName = request.getParameter("fullname");
+        String email = request.getParameter("email");
+        String userName = request.getParameter("username");
+        System.out.println("This is user name :" + userName);
+        String password = request.getParameter("password");
+        int age = Integer.parseInt(request.getParameter("age"));
+        int donate = Integer.parseInt(request.getParameter("donate"));
         User user = new User(fullName,email,userName,password,age,donate);
         try {
 			userDao.save(user);
