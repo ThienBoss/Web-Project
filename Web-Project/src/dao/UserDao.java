@@ -20,7 +20,7 @@ public class UserDao implements DAO<User>, Closeable {
 	@Override
 	public List<User> getAll() throws SQLException {
         List<User> user = new ArrayList<User>();
-        rs = Query.executeStatementQuery(Query.selectAll(TablesName.user));
+        rs = Query.executeStatementQuery(Query.selectAll(TablesName.getUser()));
          while(rs.next()) {
            user.add(new User(
                        rs.getString(1),
@@ -34,16 +34,16 @@ public class UserDao implements DAO<User>, Closeable {
 	}
 	@Override
 	public void save(User t) throws SQLException {
-        String [] userAttributes = {
+        String[] userAttributes = {
+            t.getUserName(),
+            t.getPassword(),
             t.getFulName(),
             t.getEmail(),
-            t.getFulName(),
-            t.getPassword(),
             Integer.toString(t.getAge()),
             Integer.toString(t.getDonated())
         };
 
-        rs = Query.executeStatementQuery(Query.inserToTable(tablesName.user,userAttributes))
+        rs = Query.executeStatementQuery(Query.insertToTable(TablesName.getUser(),userAttributes));
 	}
 	@Override
 	public void update(User t) throws SQLException {
