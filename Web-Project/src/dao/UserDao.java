@@ -45,7 +45,7 @@ public class UserDao implements DAO<User>, Closeable {
             Integer.toString(t.getDonated())
         };
 
-        rs = st.executeUpdate(Query.insertToTable(TablesName.getUser(), userAttributes))
+        st.executeUpdate(Query.insertToTable(TablesName.getUser(), userAttributes));
 	}
 	@Override
 	public void update(User t) throws SQLException {

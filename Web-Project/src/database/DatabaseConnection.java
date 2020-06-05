@@ -9,8 +9,8 @@ public class DatabaseConnection {
 	public static Connection connectToDatabase()  {
 		String dbDriver = "com.mysql.jdbc.Driver";
 		String dbURL = "jdbc:mysql://localhost:3306/";
-		
 		String dbName = "WebProject";
+
 		String dbUserName = "thiennguyen";
 		String dbPassword = "password";
 		try {
