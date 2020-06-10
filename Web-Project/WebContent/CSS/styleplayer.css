@@ -28,13 +28,13 @@ body{
 .bar{
   width: 50px;
   height: 10px;
-  border: 2px solid #fff;
+  border: 2px solid #FFC0CB;
   margin: 6px;
   cursor: pointer;
   transition: 0.4s;
 }
 .bar:hover{
-  background: #fff;
+  background: #FFF;
 }
 
 input[name="r"]{

@@ -3,7 +3,9 @@ import java.io.Closeable;
 import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Hashtable;
 import java.util.List;
+import java.util.Map;
 
 import database.DatabaseConnection;
 import database.Query;
@@ -19,21 +21,50 @@ public class UserDao implements DAO<User>, Closeable {
 		databaseConnection = new DatabaseConnection();
 		st = databaseConnection.connectToDatabase().createStatement();
 	}
-	@Override
-	public List<User> getAll() throws SQLException {
-        List<User> user = new ArrayList<User>();
-        rs = st.executeQuery(Query.selectAll(TablesName.getUser()));
-         while(rs.next()) {
-           user.add(new User(
-                       rs.getString(1),
-                       rs.getString(2),
-                       rs.getString(3),
-                       rs.getString(4),
-                       rs.getInt(5),
-                       rs.getInt(6)));
-         }
-         return user;
-	}
+	
+//	public Hashtable<String,String> getAllUserName() throws SQLException {
+//		String userName = "";
+//		String password = "";
+//		Hashtable<String,String> userAndPass = new Hashtable<String,String>();
+//        String[] multiField = {TablesName.getUserName() , TablesName.getUserPassword()};
+//		System.out.println(Query.selectAttribute(multiField,TablesName.getUserTable()));
+//        rs = st.executeQuery(Query.selectAttribute(multiField,TablesName.getUserTable()));
+//         while(rs.next()) {
+//        	userName = rs.getString(1);
+//            password = rs.getString(2);
+//            System.out.println("User Name form Database :" + userName);
+//            System.out.println("Password form Database :" + password);
+//            userAndPass.put(userName, password);
+//         }
+//         System.out.println(userAndPass);
+//         return userAndPass;
+//	}
+//
+    public boolean validateLogin(String userName, String password) {
+    	String userPassword = "";
+    	System.out.println("Query " + Query.selectHasCondition(
+							TablesName.getUserPassword(),
+							TablesName.getUserTable(),
+							TablesName.getUserName(), userName) );
+    	try {
+			rs = st.executeQuery(
+					Query.selectHasCondition(
+							TablesName.getUserPassword(),
+							TablesName.getUserTable(),
+							TablesName.getUserName(), "'" + userName + "'"));
+			while(rs.next()) {
+				userPassword = rs.getString(1);
+			}
+			if(password.equals(userPassword))
+				System.out.println("Login Success!");
+				return true;
+		} catch (SQLException e) {
+			System.out.println("Incorrect User Name or Password!");
+			e.printStackTrace();
+		}
+        return false;
+    }
+
 	@Override
 	public void save(User t) throws SQLException {
         String[] userAttributes = {
@@ -45,7 +76,7 @@ public class UserDao implements DAO<User>, Closeable {
             Integer.toString(t.getDonated())
         };
 
-        st.executeUpdate(Query.insertToTable(TablesName.getUser(), userAttributes));
+        st.executeUpdate(Query.insertToTable(TablesName.getUserTable(), userAttributes));
 	}
 	@Override
 	public void update(User t) throws SQLException {

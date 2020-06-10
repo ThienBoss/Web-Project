@@ -13,8 +13,23 @@ public class Query {
         return selectAll;
     }
 
-    public static String  selectCondition (String attribute, String tableName, String condition) {
-        String select = "SELECT " + attribute + "FROM " + "WHEN " + condition + " = ";
+    public static String  selectAttribute (String[] attributes , String tableName) {
+        String select = "SELECT ";
+        String value = "";
+        String lastValue = attributes[attributes.length - 1];
+        for (int i  = 0; i < attributes.length; i++) {
+            value = attributes[i];
+            System.out.println(value);
+            if(value.equals(lastValue)) {
+            select += value + " FROM " + tableName +";";
+            } else {
+            select += value + ",";
+            }
+        }
+        return select ;
+    }
+    public static String  selectHasCondition (String field1, String tableName, String field2, String condition) {
+        String select = "SELECT " + field1 + " FROM " + tableName + "  WHERE " + field2 + " = " + condition + ";";
         return select;
     }
     
