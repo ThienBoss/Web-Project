@@ -31,6 +31,7 @@ public class DatabaseConnection {
     public void closeConnection() {
         try {
             conn.close() ;
+            System.out.println("Database Closed");
         } catch (SQLException e) {
           e.printStackTrace();  
         } 

@@ -3,6 +3,7 @@ package controller;
 import java.io.IOException;
 import java.sql.SQLException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,8 +16,8 @@ import model.User;
 /**
  * Servlet implementation class RegistrantionController
  */
-@WebServlet("/Registration")
-public class RegistrantionController extends HttpServlet {
+@WebServlet("/Authentication")
+public class Authentication extends HttpServlet {
     private UserDao userDao;
 	private static final long serialVersionUID = 1L;
        
@@ -25,7 +26,7 @@ public class RegistrantionController extends HttpServlet {
      * @throws SQLException 
      * @see HttpServlet#HttpServlet()
      */
-    public RegistrantionController() throws ClassNotFoundException, SQLException {
+    public Authentication() throws ClassNotFoundException, SQLException {
         super();
         userDao = new UserDao();
     }
@@ -38,11 +39,22 @@ public class RegistrantionController extends HttpServlet {
         String userName = request.getParameter("signUpName");
         System.out.println("This is user name :" + userName);
         String password = request.getParameter("signUpPassword");
+        String rePassword = request.getParameter("signUpRePassword");
         int age = Integer.parseInt(request.getParameter("Age"));
         int donate = 0;
-        User user = new User(fullName,email,userName,password,age,donate);
+       
         try {
-			userDao.save(user);
+        	if (password.equals(rePassword)){
+            User user = new User(fullName,email,userName,password,age,donate);
+            userDao.save(user);
+            RequestDispatcher dispatcher = request.getRequestDispatcher("Login.jsp");
+            dispatcher.forward(request,response);
+        } else {
+            RequestDispatcher dispatcher = request.getRequestDispatcher("FailedPopup.jsp");
+            dispatcher.forward(request,response);
+        }
+			
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -52,7 +64,13 @@ public class RegistrantionController extends HttpServlet {
 		//doGet(request, response);
         String userName = request.getParameter("loginName");
         String password = request.getParameter("loginPassword");
-        userDao.validateLogin(userName, password);
+        if (userDao.validateLogin(userName, password)) {
+            RequestDispatcher dispatcher = request.getRequestDispatcher("RentPlayer.jsp");
+            dispatcher.forward(request,response);
+        } else {
+            RequestDispatcher dispatcher = request.getRequestDispatcher("FailedPopup.jsp");
+            dispatcher.forward(request,response);
+        }
 	}
 
 }

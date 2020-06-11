@@ -57,7 +57,7 @@
             }
         </script>
         <div id="Login" style="display: block" class="box">
-            <form action="Registration" method="post">
+            <form action="Authentication" method="post">
                 <input type="text" name="loginName" placeholder="Username">
                 <input type="password" name="loginPassword" placeholder="Password">
                 <input type="submit" value="LOGIN">
@@ -67,7 +67,7 @@
             </form>
         </div>
         <div id="Signup" style="display: none" class="box">
-            <form action="Registration" method="get">
+            <form action="Authentication" method="get">
                 <input type="text" name="signUpName" placeholder="Username" required>
                 <input type="password" name="signUpPassword" placeholder="Password" required>
                 <input type="password" name="signUpRePassword" placeholder="Retype Password" required>

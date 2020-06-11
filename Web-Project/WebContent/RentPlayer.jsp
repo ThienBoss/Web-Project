@@ -5,8 +5,8 @@
         <meta charset="utf-8">
         <title></title>
         <link href="https://fonts.googleapis.com/css?family=Dokdo" rel="stylesheet">
-        <link rel="stylesheet" href="styleplayer.css">
-        <link rel="stylesheet" href="stylebar.css">
+        <link rel="stylesheet" href="CSS/styleplayer.css">
+        <link rel="stylesheet" href="CSS/stylebar.css">
         <style type="text/css">
     
  
@@ -140,6 +140,7 @@
             <div class="box">
                 <img src="https://i.pinimg.com/originals/2b/78/3b/2b783b117941fba92b7a2ddabdba2f43.jpg" class ="box-image">
                 <table style="margin: 0 auto">
+                    
                     <tr>
                         <td>Vợ Thanh</td>
                     </tr>

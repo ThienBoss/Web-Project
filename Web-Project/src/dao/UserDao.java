@@ -21,25 +21,7 @@ public class UserDao implements DAO<User>, Closeable {
 		databaseConnection = new DatabaseConnection();
 		st = databaseConnection.connectToDatabase().createStatement();
 	}
-	
-//	public Hashtable<String,String> getAllUserName() throws SQLException {
-//		String userName = "";
-//		String password = "";
-//		Hashtable<String,String> userAndPass = new Hashtable<String,String>();
-//        String[] multiField = {TablesName.getUserName() , TablesName.getUserPassword()};
-//		System.out.println(Query.selectAttribute(multiField,TablesName.getUserTable()));
-//        rs = st.executeQuery(Query.selectAttribute(multiField,TablesName.getUserTable()));
-//         while(rs.next()) {
-//        	userName = rs.getString(1);
-//            password = rs.getString(2);
-//            System.out.println("User Name form Database :" + userName);
-//            System.out.println("Password form Database :" + password);
-//            userAndPass.put(userName, password);
-//         }
-//         System.out.println(userAndPass);
-//         return userAndPass;
-//	}
-//
+
     public boolean validateLogin(String userName, String password) {
     	String userPassword = "";
     	System.out.println("Query " + Query.selectHasCondition(
@@ -55,11 +37,14 @@ public class UserDao implements DAO<User>, Closeable {
 			while(rs.next()) {
 				userPassword = rs.getString(1);
 			}
-			if(password.equals(userPassword))
+			if(password.equals(userPassword)) {
 				System.out.println("Login Success!");
 				return true;
+            } else {
+        	System.out.println("Incorrect User Name or Password!");
+                return false;
+            }
 		} catch (SQLException e) {
-			System.out.println("Incorrect User Name or Password!");
 			e.printStackTrace();
 		}
         return false;
