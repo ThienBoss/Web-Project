@@ -64,6 +64,7 @@ public class Authentication extends HttpServlet {
             if (userDao.isStreamer()){
                 System.out.println("Welcome Streamer " + userName);
             }
+            System.out.println("Welcome User " + userName);
         
             RequestDispatcher dispatcher = request.getRequestDispatcher(address);
             dispatcher.forward(request,response);
