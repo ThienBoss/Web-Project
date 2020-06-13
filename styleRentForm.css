@@ -1,3 +1,12 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jun 13, 2020, 9:55:31 PM
+    Author     : ThanhLee
+*/
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
 *{
@@ -10,7 +19,7 @@
 }
 
 body{
-  background: url('https://i.imgur.com/kk76J5I.jpg') no-repeat top center;
+  background: url('https://barbarashdwallpapers.com/wp-content/uploads/2015/07/HD-wallpaper-with-hearts-orange-1.jpg') no-repeat top center;
   background-size: cover;
   height: 100vh;
 }
@@ -30,6 +39,11 @@ body{
 
 .wrapper .title h1{
   color: #c5ecfd;
+  text-align: center;
+  margin-bottom: 25px;
+}
+.wrapper .title1 h1{
+  color: #ff9900;
   text-align: center;
   margin-bottom: 25px;
 }
@@ -67,7 +81,7 @@ body{
 
 ::-webkit-input-placeholder {
   /* Chrome/Opera/Safari */
-  color: #c5ecfd;
+  color: white;
 }
 ::-moz-placeholder {
   /* Firefox 19+ */
@@ -87,7 +101,15 @@ body{
     cursor: pointer;
     text-transform: uppercase;
 }
-
+.btn1 {
+    background: #ff9900;
+    text-align: center;
+    padding: 15px;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    text-transform: uppercase;
+}
 
 
 @media screen and (max-width: 600px){
