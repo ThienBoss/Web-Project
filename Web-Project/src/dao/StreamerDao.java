@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.List;
 import java.util.Map;
-
 import database.DatabaseConnection;
 import database.Query;
 import database.TablesName;
@@ -27,14 +26,16 @@ public class StreamerDao implements DAO<Streamer>, Closeable {
 
 	@Override
 	public void save(Streamer s) throws SQLException {
-        String[] streamerAttribute = {
+        String[] streamerAccount = {
            s.getUserName(),
            s.getPassword(),
            s.getFullName(),
            s.getEmail(),
            Integer.toString(s.getAge()),
            Integer.toString(s.getDonated()),
-           s.getSex(),
+           s.getSex(), };
+
+        String[] streamerDetailInfo = {
            Integer.toString(s.getStreamerId()),
            s.getInformation(),
            s.getImages(),
@@ -43,6 +44,9 @@ public class StreamerDao implements DAO<Streamer>, Closeable {
            Integer.toString(s.getStatus()),
            s.getLocation()
         };
+
+        st.executeUpdate(Query.insertToTable(TablesName.getStreamerTable(), streamerDetailInfo));
+        st.executeUpdate(Query.insertToTable(TablesName.getUserTable(), streamerAccount));
 		
 	}
 
