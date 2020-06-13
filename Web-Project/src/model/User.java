@@ -5,17 +5,22 @@ public class User {
 	private String email;
 	private String userName;
 	private String password;
+    private String sex;
 	private int age;
 	private int donated;
+    private int streamerId;
 
-	public User(String fulName, String email, String userName, String password,int age , int donated) {
+	public User( String userName, String password, String fulName, String email,int age , int donated,String sex, int streamerId) {
 		super();
-		this.fulName = fulName;
-		this.email = email;
+		
 		this.userName = userName;
 		this.password = password;
+        this.fulName = fulName;
+		this.email = email;
 		this.age = age;
 		this.donated = donated;
+        this.sex = sex;
+        this.streamerId = streamerId;
 	}
 
 	public String getFulName() {
@@ -64,4 +69,22 @@ public class User {
 	public void setDonated(int donated) {
 		this.donated = donated;
 	}
+	public String getSex() {
+		return sex;
+	}
+
+	public void setSex(String sex) {
+		this.sex = sex;
+	}
+
+	public int getStreamerId() {
+		return streamerId;
+	}
+
+	public void setStreamerId(int streamerId) {
+		this.streamerId = streamerId;
+	}
+
+
+
 }

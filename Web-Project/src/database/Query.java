@@ -28,8 +28,17 @@ public class Query {
         }
         return select ;
     }
-    public static String  selectHasCondition (String field1, String tableName, String field2, String condition) {
-        String select = "SELECT " + field1 + " FROM " + tableName + "  WHERE " + field2 + " = " + condition + ";";
+    public static String  selectHasCondition (String[] listofFields, String tableName, String id, String condition) {
+        String select = "SELECT "  ;
+        String lastFiedl = listofFields[listofFields.length - 1];
+        for (int i = 0; i < listofFields.length; i++) {
+            if(listofFields[i].equals(lastFiedl)){
+                select += listofFields[i] + " FROM " + tableName + "  WHERE " + id + " = " + condition + ";" ;
+            } else {
+                select += listofFields[i] + ",";
+            }
+        }
+        
         return select;
     }
     

@@ -1,14 +1,15 @@
 package database;
 
 public class TablesName {
-	public static String streamerTable = "Streamer";
-	public static String userTable = "User";
-    public static String userName = "user_name";
-    public static String userPassword = "password";
+    //User
+	private static String userTable = "User";
+    private static String userName = "user_name";
+    private static String userPassword = "password";
+    //Streamer
+	private static String streamerTable = "Streamer";
+    private static String streamerID = "StreamerID";
 
-	public static String getStreamerTable() {
-		return streamerTable;
-	}
+	
 	public static String getUserTable() {
 		return userTable;
 	}
@@ -18,5 +19,13 @@ public class TablesName {
     public static String getUserPassword() {
         return userPassword ;
     }
+
+    public static String getStreamerTable() {
+		return streamerTable;
+	}
+    public static String getStreamerID() {
+        return streamerID;
+    }
+    
 
 }

@@ -31,10 +31,10 @@ public class Authentication extends HttpServlet {
         userDao = new UserDao();
     }
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
         response.setContentType("text/html");
-        String fullName = "";
+        String fullName = request.getParameter("signUpFullName");
         String email = request.getParameter("Email");
         String userName = request.getParameter("signUpName");
         System.out.println("This is user name :" + userName);
@@ -42,35 +42,34 @@ public class Authentication extends HttpServlet {
         String rePassword = request.getParameter("signUpRePassword");
         int age = Integer.parseInt(request.getParameter("Age"));
         int donate = 0;
-       
-        try {
-        	if (password.equals(rePassword)){
-            User user = new User(fullName,email,userName,password,age,donate);
+        String sex = "";
+        int streamerId = -1;
+        try {  
+            User user = new User(userName,password,fullName,email,age,donate,sex,streamerId);
             userDao.save(user);
             RequestDispatcher dispatcher = request.getRequestDispatcher("Login.jsp");
             dispatcher.forward(request,response);
-        } else {
-            RequestDispatcher dispatcher = request.getRequestDispatcher("FailedPopup.jsp");
-            dispatcher.forward(request,response);
-        }
-			
-
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-	}
-	
+    }
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//doGet(request, response);
         String userName = request.getParameter("loginName");
         String password = request.getParameter("loginPassword");
+        String address = "";
         if (userDao.validateLogin(userName, password)) {
-            RequestDispatcher dispatcher = request.getRequestDispatcher("RentPlayer.jsp");
+            address = "rentplayer.jsp";
+            if (userDao.isStreamer()){
+                System.out.println("Welcome Streamer " + userName);
+            }
+        
+            RequestDispatcher dispatcher = request.getRequestDispatcher(address);
             dispatcher.forward(request,response);
         } else {
             RequestDispatcher dispatcher = request.getRequestDispatcher("FailedPopup.jsp");
             dispatcher.forward(request,response);
         }
 	}
-
 }

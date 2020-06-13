@@ -8,14 +8,27 @@ and open the template in the editor.
     Author     : ThanhLee
 */
 .my-image { 
-    margin-left: 100px; 
-    margin-top: 150px;
+    
+    margin-left: 5%; 
+    margin-top: 7%;
 }
-my-image2 {
+.my-image2 {
     margin-left: 50px; 
     margin-top: 20px; 
 }
 box-image {
     width : 100px;
     height : 100px;
+}
+.my-image3 {
+    position: absolute;
+    right: -10px;   
+    width: 40%;
+    margin-top: auto;
+}
+.my-image4{
+    margin-top: 3%;
+    width: 100%;
+    
+    
 }

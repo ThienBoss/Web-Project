@@ -6,18 +6,19 @@
         <link rel = "stylesheet" type = "text/css" href = "CSS/stylelogin.css">
         <link rel = "stylesheet" type = "text/css" href = "CSS/stylebar.css">
         <link rel = "stylesheet" type = "text/css" href = "CSS/styleimage.css">
+        <link rel="stylesheet" href="CSS/stylepopup1.css">
         <style>
             
         </style>
     </head>
     <body>
         <nav>          
-            <label style="color:#FFC0CB" class="logo">気持ち~</label>
+            <label style="color:#fff" class="logo">気持ち~</label>
             <ul>
-                <li><a href="">User page</a></li>
-                <li><a href="rentplayer.jsp">Rent player</a></li>
+                <li><a href="User.jsp">User</a></li>
+                <li><a href="rentplayer.jsp">Girlfriend</a></li>
                 <li><a href="">Buy Card</a></li>
-                <li><a href="">Ranking</a></li>
+                <li><a href="Rank.jsp">Ranking</a></li>
                 <li><a href="Login.jsp">Login</a></li>
             </ul>
         </nav>
@@ -55,6 +56,21 @@
                     y.style.display = "none";
                 }
             }
+            function togglePopup(){
+                document.getElementById("popup-1").classList.toggle("active");
+            
+            }
+                
+            function checkReType()  {
+                if (document.getElementById('signUpPassword').value ==
+                    document.getElementById('signUpRePassword').value) {
+                document.getElementById('message').style.color = 'green';
+                document.getElementById('message').innerHTML = 'Matching !';
+            } else {
+                document.getElementById('message').style.color = 'red';
+                document.getElementById('message').innerHTML = 'Not Matching !';
+                }
+            }
         </script>
         <div id="Login" style="display: block" class="box">
             <form action="Authentication" method="post">
@@ -64,19 +80,32 @@
                 <a href="" style="color: red; padding-left: 40%;">Forgot password?</a><br><br>
                 <hr>
                 <input type="button" value="SIGN UP" onclick="signUp()">
+                
             </form>
         </div>
+        
         <div id="Signup" style="display: none" class="box">
             <form action="Authentication" method="get">
-                <input type="text" name="signUpName" placeholder="Username" required>
-                <input type="password" name="signUpPassword" placeholder="Password" required>
-                <input type="password" name="signUpRePassword" placeholder="Retype Password" required>
-                <input type="text" name="Age" placeholder="Age" required>
-                <input type="text" name="Email" placeholder="Email" required>
+                <input type="text" name="signUpName" placeholder="Username">
+                <input type="password" name="signUpPassword"   id="signUpPassword"  placeholder="Password" onkeyup="checkReType()"/>
+                <input type="password" name="signUpRePassword" id="signUpRePassword" placeholder="Retype Password"  onkeyup="checkReType()"/>
+                  <span id='message'></span>
+                <input type="text" name="signUpFullName" placeholder="Your Name">
+                <input type="text" name="Age" placeholder="Age">
+                <input type="text" name="Email" placeholder="Email">
                 <input type="submit" value="SIGN UP">
                 <hr>
                 <input type="button" value="LOGIN" onclick="login()">
             </form>
+        </div>
+        <div class="popup" id="popup-1">
+        <div class="overlay"></div>
+        <div class="content">
+          <div class="close-btn" onclick="togglePopup()">&times;</div>
+          <img src ="https://png.pngtree.com/png-vector/20191113/ourlarge/pngtree-green-check-mark-icon-flat-style-png-image_1986021.jpg" width="100" height="100">
+          <h1>Popup title</h1>
+          <p>Popup content</p>
+        </div>
         </div>
     </body>
 </html>

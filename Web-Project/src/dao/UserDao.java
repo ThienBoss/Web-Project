@@ -16,6 +16,7 @@ public class UserDao implements DAO<User>, Closeable {
 	private DatabaseConnection databaseConnection;
     private ResultSet rs ;
     private Statement st;
+    private boolean isStreamer  = false;
 
 	public UserDao() throws ClassNotFoundException, SQLException {
 		databaseConnection = new DatabaseConnection();
@@ -24,22 +25,29 @@ public class UserDao implements DAO<User>, Closeable {
 
     public boolean validateLogin(String userName, String password) {
     	String userPassword = "";
+        int streamerID = 0;
+        String[] listOfFields = {TablesName.getUserPassword(),TablesName.getStreamerID()};
     	System.out.println("Query " + Query.selectHasCondition(
-							TablesName.getUserPassword(),
+							listOfFields,
 							TablesName.getUserTable(),
 							TablesName.getUserName(), userName) );
     	try {
 			rs = st.executeQuery(
 					Query.selectHasCondition(
-							TablesName.getUserPassword(),
+							listOfFields,
 							TablesName.getUserTable(),
 							TablesName.getUserName(), "'" + userName + "'"));
 			while(rs.next()) {
 				userPassword = rs.getString(1);
+                streamerID = rs.getInt(2);
 			}
 			if(password.equals(userPassword)) {
 				System.out.println("Login Success!");
+                if(streamerID > 0){
+                    isStreamer = true;
+                }
 				return true;
+
             } else {
         	System.out.println("Incorrect User Name or Password!");
                 return false;
@@ -50,6 +58,10 @@ public class UserDao implements DAO<User>, Closeable {
         return false;
     }
 
+    public boolean isStreamer() {
+        return isStreamer;
+    }
+
 	@Override
 	public void save(User t) throws SQLException {
         String[] userAttributes = {
@@ -58,7 +70,10 @@ public class UserDao implements DAO<User>, Closeable {
             t.getFulName(),
             t.getEmail(),
             Integer.toString(t.getAge()),
-            Integer.toString(t.getDonated())
+            Integer.toString(t.getDonated()),
+            t.getSex(),
+            Integer.toString(t.getStreamerId()
+            )
         };
 
         st.executeUpdate(Query.insertToTable(TablesName.getUserTable(), userAttributes));

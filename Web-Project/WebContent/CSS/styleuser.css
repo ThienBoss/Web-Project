@@ -1,0 +1,93 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jun 11, 2020, 9:49:31 PM
+    Author     : ThanhLee
+*/
+            .box2{
+                width: 300px;
+                padding: 30px ;
+                position: absolute;
+                top: 40%;
+                left: 15%;               
+                transform: translate(-50%, -50%);
+                background: white;
+                text-align: center;
+                border: 2px solid whitesmoke;
+                border-radius: 5px;
+                box-shadow: 0px 4px 10px rgba(0,0,0,.3);
+            }
+            .box3{
+                width: 500px;
+                padding: 40px;
+                position: absolute;
+                top: 20%;
+                left: 50%;                
+                transform: translate(-50%, -50%);
+                background: white;
+                text-align: center;
+                border: 2px solid whitesmoke;
+                border-radius: 5px;
+                box-shadow: 0px 4px 10px rgba(0,0,0,.3);
+            }
+            .box4{
+                width: 300px;
+                padding: 30px;
+                position: absolute;
+                top: 33%;
+                left: 85%;                
+                transform: translate(-50%, -50%);
+                background: white;
+                text-align: center;
+                border: 2px solid whitesmoke;
+                border-radius: 5px;
+                box-shadow: 0px 4px 10px rgba(0,0,0,.3);
+            }
+            .box3 input[type = "text"]{
+                border: 0;
+                background: white;
+                display: block;
+                margin: 20px auto;
+                text-align: center;
+                border: 2px solid wheat;
+                padding: 10px 120px;
+                width: 200px;
+                outline: none;
+                color: black;
+                border-radius: 24px;
+                transition: 0.25s;
+            }
+            .box4 input[type = "button"]{
+                border: 0;
+                background: none;
+                display: block;
+                margin: 20px auto;
+                text-align: center;
+                font-family: inherit;
+                border: 2px solid gray;
+                padding: 10px 30px;
+                width: 130px;
+                outline: none;
+                color: black;
+                border-radius: 24px;
+                transition: 0.25s;
+                cursor: pointer;
+                font-weight: bold;
+            }
+            .box3-img{
+                border-radius: 50%;
+                width: 200px;
+                height: 200px;
+            }
+            .box2-img{
+                border-radius: 50%;
+                width: 200px;
+                height: 200px;
+            } 
+            .box2-img2{
+                width: 400px;
+                height: 400px;
+            }

@@ -14,7 +14,7 @@
            h1{
             text-align: center;
            }
-           p{
+           p{j
             font-size: 55px;
            }
            header{
@@ -80,8 +80,8 @@
             <ul>
                 <li><a href="User.jsp">User</a></li>
                 <li><a href="rentplayer.jsp">Girlfriend</a></li>
-                <li><a href="">Buy Card</a></li>
-                <li><a href="">Ranking</a></li>
+                <li><a href="buycard.jsp">Buy Card</a></li>
+                <li><a href="Rank.jsp">Ranking</a></li>
                 <li><a href="Login.jsp">Login</a></li>
             </ul>
         </nav>
@@ -156,7 +156,7 @@
                         <td>2 củ rưỡi</td>
                     </tr>                   
                 </table>
-                <input style="color: red; margin-left: 30%;" type="button" value="rent" onclick="">
+                <input style="color: red; margin-left: 30%;" type="button" value="rent" onclick="location.href = 'Profile.jsp'">
             </div>
             <div class="box">
                 <img src="https://i.pinimg.com/originals/b7/25/12/b725125aaebafbcbf2fb3886a55d2d6f.jpg" class ="box-image">
@@ -249,7 +249,7 @@
                 <input style="color: red; margin-left: 30%;" type="button" value="rent" onclick="">
             </div>
             <div class="box">
-                <img src="https://lh3.googleusercontent.com/proxy/bZoRGAYGWN55c_uGcwm7pgAqygAC-yNygYwk7YC-yiOWyykb4ahFL2vmsKqdJjA8Xq9OG507p2oSJ3fOLf1HIvafPnE5jQPIWx-8MtVlmerUiKkx-22AxgrQ-tKz3kLH86A1CFo6Rw" class ="box-image">
+                <img src="https://image.winudf.com/v2/image/Y29tLnN1YWRhaDA2MTEuYW5pbWVnaXJsa2F3YWlpYXBwX3NjcmVlbl8yXzE1MjM4OTA0OTRfMDI0/screen-2.jpg?fakeurl=1&type=.jpg" class ="box-image">
                 <table style="margin: 0 auto">
                     <tr>
                         <td>Bồ nhí Thiên</td>
