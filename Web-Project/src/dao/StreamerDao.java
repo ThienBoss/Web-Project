@@ -18,7 +18,7 @@ public class StreamerDao implements DAO<Streamer>, Closeable {
     private ResultSet rs ;
     private java.sql.Statement st ;
     
-    private StreamerDao() throws SQLException {
+    public StreamerDao() throws SQLException {
         databaseConnection = new DatabaseConnection();
         st = databaseConnection.connectToDatabase().createStatement();
     }
@@ -26,17 +26,16 @@ public class StreamerDao implements DAO<Streamer>, Closeable {
 
 	@Override
 	public void save(Streamer s) throws SQLException {
-        String[] streamerAccount = {
-           s.getUserName(),
-           s.getPassword(),
-           s.getFullName(),
-           s.getEmail(),
-           Integer.toString(s.getAge()),
-           Integer.toString(s.getDonated()),
-           s.getSex(), };
+        String[] listOfFields = {
+            TablesName.getStreamerInfo(),
+            TablesName.getStreamerImage(),
+            TablesName.getStreamerHirePrice(),
+            TablesName.getStreamerStar(),
+            TablesName.getStreamerStatus(),
+            TablesName.getStreamerLocation()};
 
+        String streamerEmail =  "" ;
         String[] streamerDetailInfo = {
-           Integer.toString(s.getStreamerId()),
            s.getInformation(),
            s.getImages(),
            Integer.toString(s.getHirePrice()),
@@ -45,9 +44,39 @@ public class StreamerDao implements DAO<Streamer>, Closeable {
            s.getLocation()
         };
 
-        st.executeUpdate(Query.insertToTable(TablesName.getStreamerTable(), streamerDetailInfo));
+        st.executeUpdate(Query.insertToFields(TablesName.getStreamerTable(),listOfFields, streamerDetailInfo));          
+        int streamerID = 0;
+        String[] fields = {TablesName.getStreamerID()};
+        String[] id = {TablesName.getStreamerImage(),TablesName.getStreamerLocation()};
+        String[] conditions = {s.getImages(),s.getLocation()};
+        try {
+           rs = st.executeQuery(Query.selectHasCondition(
+                       fields,
+                       TablesName.getStreamerTable(),
+                       id, conditions ));
+           System.out.println("Query select has condition : " + Query.selectHasCondition(
+                       fields,
+                       TablesName.getStreamerTable(),
+                       id, conditions ));
+           while(rs.next()) {
+               streamerID = rs.getInt(1);
+           }
+           s.setStreamerId (streamerID);
+           System.out.println("StreamID : " + s.getStreamerId());
+           
+        } catch (SQLException e) {
+        	e.printStackTrace();
+        }
+		String[] streamerAccount = { 
+				s.getUserName(),
+				s.getPassword(),
+				s.getFullName(),
+				s.getEmail(),
+				Integer.toString(s.getAge()),
+				Integer.toString(s.getDonated()), s.getSex(),
+				Integer.toString(s.getStreamerId()) };
+
         st.executeUpdate(Query.insertToTable(TablesName.getUserTable(), streamerAccount));
-		
 	}
 
 	@Override

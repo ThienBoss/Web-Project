@@ -11,7 +11,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Register</title>
         <link rel = "stylesheet" type = "text/css" href = "CSS/stylebar.css">
-        <link rel = "stylesheet" type = "text/css" href = "CSS/stylelogin.css">
+        <link rel = "stylesheet" type = "text/css" href = "CSS/stylelogin1.css">
+        
     </head>
     <body>
         <nav>          
@@ -60,10 +61,11 @@
             }
         </script>
         <div id="Signup" style="display: block" class="box">
-            <form action="" method="post">
+            <form action="StreamerRegister" method="get">
                 <input type="text" name="signUpName" placeholder="Username">
                 <input type="password" name="signUpPassword" placeholder="Password">
                 <input type="password" name="signUpRePassword" placeholder="Retype Password">
+                <input type="text" name="signUpName" placeholder="Your Name">
                 <input type="text" name="Age" placeholder="Age">
                 <input type="text" name="Email" placeholder="Email">
                 <input type="text" name="Location" placeholder="Location">

@@ -3,12 +3,11 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Login</title>
-        <link rel = "stylesheet" type = "text/css" href = "CSS/stylelogin.css">
+        <link rel = "stylesheet" type = "text/css" href = "CSS/stylelogin1.css">
         <link rel = "stylesheet" type = "text/css" href = "CSS/stylebar.css">
         <link rel = "stylesheet" type = "text/css" href = "CSS/styleimage.css">
         <link rel="stylesheet" href="CSS/stylepopup1.css">
         <style>
-            
         </style>
     </head>
     <body>

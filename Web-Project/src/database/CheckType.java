@@ -7,7 +7,6 @@ public class CheckType  {
         try {
             int i = Integer.parseInt(input);
         } catch (NumberFormatException e) {
-            System.out.println("NumberFormatException!!!");
             return false;
         }
         return true;

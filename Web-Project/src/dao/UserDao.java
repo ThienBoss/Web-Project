@@ -27,16 +27,21 @@ public class UserDao implements DAO<User>, Closeable {
     	String userPassword = "";
         int streamerID = 0;
         String[] listOfFields = {TablesName.getUserPassword(),TablesName.getStreamerID()};
-    	System.out.println("Query " + Query.selectHasCondition(
-							listOfFields,
-							TablesName.getUserTable(),
-							TablesName.getUserName(), userName) );
+        String[] id = {TablesName.getUserName()};
+        String[] condition = {userName};
+    	
     	try {
 			rs = st.executeQuery(
 					Query.selectHasCondition(
 							listOfFields,
 							TablesName.getUserTable(),
-							TablesName.getUserName(), "'" + userName + "'"));
+							id,
+                            condition));
+        System.out.println("Query : " + Query.selectHasCondition(
+		    listOfFields,
+			TablesName.getUserTable(),
+			id,
+            condition));
 			while(rs.next()) {
 				userPassword = rs.getString(1);
                 streamerID = rs.getInt(2);
