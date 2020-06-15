@@ -26,9 +26,9 @@ and open the template in the editor.
     top:50%;
     left:50%;
     transform:translate(-50%,-50%) scale(0);
-    background: whitesmoke;
-    width:650px;
-    height:370px;
+    background: none;
+    width: 580px;
+    height:400px;
     z-index:2;
     text-align:center;
     padding:20px;
@@ -43,8 +43,8 @@ and open the template in the editor.
     top:20px;
     width:30px;
     height:30px;
-    background:#222;
-    color:#fff;
+    background: white;
+    color:red;
     font-size:25px;
     font-weight:600;
     line-height:30px;

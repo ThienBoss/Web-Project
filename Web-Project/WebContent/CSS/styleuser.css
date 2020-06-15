@@ -7,6 +7,15 @@ and open the template in the editor.
     Created on : Jun 11, 2020, 9:49:31 PM
     Author     : ThanhLee
 */
+            *{
+                margin: 0;
+                padding: 0;
+                text-decoration: none;
+            }
+            body{
+                font-family: sans-serif;
+                background: whitesmoke;
+            }
             .box2{
                 width: 300px;
                 padding: 30px ;
@@ -52,13 +61,16 @@ and open the template in the editor.
                 display: block;
                 margin: 20px auto;
                 text-align: center;
-                border: 2px solid wheat;
+                border: 2px solid red;
                 padding: 10px 120px;
                 width: 200px;
                 outline: none;
                 color: black;
                 border-radius: 24px;
                 transition: 0.25s;
+            }
+            .box3 input::-webkit-input-placeholder {
+                color: black;
             }
             .box4 input[type = "button"]{
                 border: 0;

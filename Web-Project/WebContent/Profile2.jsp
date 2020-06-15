@@ -10,18 +10,18 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <link rel = "stylesheet" type = "text/css" href = "CSS/stylebar.css">
-        <link rel="stylesheet" href="CSS/styleprofile.css">
+        <link rel = "stylesheet" type = "text/css" href = "stylebar.css">
+        <link rel="stylesheet" href="styleprofile.css">
     </head>
     <body>
         <nav>          
             <label class="logo">気持ち~</label>
             <ul>
-                <li><a href="Login.jsp">User</a></li>
-                <li><a href="rentplayer.jsp">Streamer</a></li>
-                <li><a href="buycard.jsp">Buy Card</a></li>
-                <li><a href="Rank.jsp">Ranking</a></li>
-                <li><a href="Login.jsp">Login</a></li>
+                <li><a href="User.jsp">User</a></li>
+                <li><a href="rentplayer2.jsp">Streamer</a></li>
+                <li><a href="buycard2.jsp">Buy Card</a></li>
+                <li><a href="Rank2.jsp">Ranking</a></li>
+                <li>Welcome Thanh</li>
             </ul>
         </nav>
         <script>

@@ -12,7 +12,7 @@ nav{
     position: fixed;
     height: 70px;
     width: 100%;
-    background: #ff99ff;
+    background: #DC143C;
     box-shadow: 0px 4px 10px rgba(0,0,0,.3);
 }
 nav .logo{
@@ -31,13 +31,17 @@ nav ul li{
     display: inline-block;
     margin: 0 15px;
     line-height: 70px;
+    font-size: 17px;
+    font-weight: 600;
+    color: white;
 }
+
 nav ul li a{
     color: white;
     font-size: 17px;
     font-weight: 600;
 }
 li a:hover{
-    color: red;
+    color: #ffff33;
     transition: .5s;
 }

@@ -6,9 +6,11 @@ import java.sql.SQLException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.UserDao;
 import model.User;
@@ -60,14 +62,23 @@ public class Authentication extends HttpServlet {
         String password = request.getParameter("loginPassword");
         String address = "";
         if (userDao.validateLogin(userName, password)) {
-            address = "rentplayer.jsp";
+            address = "rentplayer2.jsp";
             if (userDao.isStreamer()){
+                
                 System.out.println("Welcome Streamer " + userName);
-            }
+                RequestDispatcher dispatcher = request.getRequestDispatcher(address);
+                dispatcher.forward(request,response);
+                
+            } else {
+            HttpSession session = request.getSession();
+            session.setAttribute("user",userName);
+            session.setMaxInactiveInterval(30*60);
+            Cookie user = new Cookie("user",userName);
+            response.addCookie(user);
             System.out.println("Welcome User " + userName);
-        
             RequestDispatcher dispatcher = request.getRequestDispatcher(address);
             dispatcher.forward(request,response);
+            }
         } else {
             RequestDispatcher dispatcher = request.getRequestDispatcher("FailedPopup.jsp");
             dispatcher.forward(request,response);

@@ -10,7 +10,6 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel = "stylesheet" type = "text/css" href = "stylebar.css">
-        <link rel = "stylesheet" type = "text/css" href = "stylelogin.css">
         <link rel = "stylesheet" type = "text/css" href = "styleimage.css">
         <link rel = "stylesheet" type = "text/css" href = "stylerank.css">
         <link rel = "stylesheet" type = "text/css" href = "stylepopup1.css">
@@ -23,21 +22,32 @@
                 document.getElementById("popup-1").classList.toggle("active");
             
             }
+            var prevScrollpos = window.pageYOffset;
+            window.onscroll = function() {
+              var currentScrollPos = window.pageYOffset;
+              if (prevScrollpos > currentScrollPos) {
+                document.getElementById("nav").style.top = "0";
+              } else {
+                document.getElementById("nav").style.top = "-100%";
+              }
+              prevScrollpos = currentScrollPos;
+            }
         </script>
         
-        <nav>          
-            <label style="color:#fff" class="logo">気持ち~</label>
+        <nav id="nav">          
+            <label class="logo">気持ち~</label>
             <ul>
-                <li><a href="User.jsp">User</a></li>
-                <li><a href="rentplayer.jsp">Girlfriend</a></li>
+                <li><a href="Login.jsp">User</a></li>
+                <li><a href="rentplayer.jsp">Streamer</a></li>
                 <li><a href="buycard.jsp">Buy Card</a></li>
                 <li><a href="Rank.jsp">Ranking</a></li>
                 <li><a href="Login.jsp">Login</a></li>
             </ul>
             <div class="box1">
-            <input style ="color:#ff99ff;" type="button" value="Rank" onclick="togglePopup()">
+            <input type="button" value="Rank" onclick="togglePopup()">
             </div>
         </nav>
+        <br>
         <img class="my-image4" src="https://media.giphy.com/media/47AAiHS8vNyGy4wpQp/giphy.gif" width="1900" height="940">
         
         <div class="popup" id="popup-1">
@@ -47,7 +57,7 @@
           
           <div class="rank">
           <ul>
-            <li style="padding-left: 35%; color:#cc0000">TOP DONATE</li>
+            <li style="padding-left: 35%; color: white">TOP DONATE</li>
             <li>
                 <span class ="number">1</span>
                 <span class ="name">Le Thanh</span>

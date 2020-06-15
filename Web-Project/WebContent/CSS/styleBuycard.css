@@ -1,0 +1,55 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jun 15, 2020, 10:04:22 PM
+    Author     : ThanhLee
+*/
+*{
+    margin: 0px;
+    margin-top: 0; 
+    text-decoration: none;
+}
+body{
+    font-family: sans-serif;
+    background: radial-gradient(whitesmoke 80%,pink);
+}
+main{
+    text-align: center;
+    margin-left: 5%;
+    margin-right: -5%;
+    width: 100%;
+    margin-top: 50px;
+}
+.bb{
+    margin: 10px;
+    width: 20%;
+    float: left;
+    padding: 10px;
+    padding-left: 10px;  
+    display: block;
+    background: white;
+    text-align: center;
+    border: 2px solid whitesmoke;
+    border-radius: 5px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,.3);                   
+}
+.bb input[type = "button"]{
+    border: 0;
+    background: #DC143C;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    font-family: inherit;
+    border: 2px solid #DC143C;
+    padding: 10px 30px;
+    width: 130px;
+    outline: none;
+    color: white;
+    border-radius: 5px;
+    transition: 0.25s;
+    cursor: pointer;
+    font-weight: bold;            
+}

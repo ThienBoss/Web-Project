@@ -9,14 +9,30 @@
         <link rel="stylesheet" href="CSS/stylebar.css">
     </head>
     <body>
+        <%
+        String user = null;
+        if (session.getAttribute("user") == null){
+            response.sendRedirect("Login.jsp");
+            } else user = (String) session.getAttribute("user");
+            String userName = null;
+            Cookie[] cookies = request.getCookies();
+            if(cookies != null ) {
+            for(Cookie c : cookies) {
+                if(c.getName().equals("user")) {
+                    userName = c.getValue();
+                }
+            }
+        }
+                
+        %>
         <nav id="nav">
             <label class="logo">気持ち~</label>
             <ul>
-                <li><a href="Login.jsp">User</a></li>
-                <li><a href="rentplayer.jsp">Streamer</a></li>
-                <li><a href="buycard.jsp">Buy Card</a></li>
-                <li><a href="Rank.jsp">Ranking</a></li>
-                <li><a href="Login.jsp">Login</a></li>
+                <li><a href="User.jsp">User</a></li>
+                <li><a href="rentplayer2.jsp">Streamer</a></li>
+                <li><a href="buycard2.jsp">Buy Card</a></li>
+                <li><a href="Rank2.jsp">Ranking</a></li>
+                <li>Welcome <%=userName %></li>
             </ul>
         </nav>
         <script>
@@ -91,7 +107,7 @@
                         <td>2 củ rưỡi</td>
                     </tr>                   
                 </table>
-                <input style="margin-left: 30%;" type="button" value="RENT" onclick="location.href = 'Profile.jsp'">
+                <input style="margin-left: 30%;" type="button" value="RENT" onclick="location.href = 'Profile2.jsp'">
             </div>
             <div class="box">
                 <img src="https://ae01.alicdn.com/kf/HTB1Zj1ubiYrK1Rjy0Fdq6ACvVXaj.jpg" class ="box-image">
@@ -106,7 +122,7 @@
                         <td>5 lít</td>
                     </tr>                   
                 </table>
-                <input style="margin-left: 30%;" type="button" value="RENT" onclick="location.href = 'Profile.jsp'">
+                <input style="margin-left: 30%;" type="button" value="RENT" onclick="location.href = 'Profile2.jsp'">
             </div>
             <div class="box">
                 <img src="https://gamek.mediacdn.vn/133514250583805952/2020/5/6/-15887585895041819860279.jpg" class ="box-image">
@@ -121,7 +137,7 @@
                         <td>9 xị</td>
                     </tr>                   
                 </table>
-                <input style="margin-left: 30%;" type="button" value="RENT" onclick="location.href = 'Profile.jsp'">
+                <input style="margin-left: 30%;" type="button" value="RENT" onclick="location.href = 'Profile2.jsp'">
             </div>               
             <div class="box">
                 <img src="https://gamek.mediacdn.vn/thumb_w/640/133514250583805952/2020/2/3/photo-1-15807152714491788209393.jpg" class ="box-image">
@@ -136,7 +152,7 @@
                         <td>contact for more information</td>
                     </tr>                   
                 </table>
-                <input style="margin-left: 30%;" type="button" value="RENT" onclick="location.href = 'Profile.jsp'">
+                <input style="margin-left: 30%;" type="button" value="RENT" onclick="location.href = 'Profile2.jsp'">
             </div>
             <div class="box">
                 <img src="https://images.pexels.com/photos/1391498/pexels-photo-1391498.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class ="box-image">
@@ -151,7 +167,7 @@
                         <td>7 cành</td>
                     </tr>                   
                 </table>
-                <input style="margin-left: 30%;" type="button" value="RENT" onclick="location.href = 'Profile.jsp'">
+                <input style="margin-left: 30%;" type="button" value="RENT" onclick="location.href = 'Profile2.jsp'">
             </div>
             <div class="box">
                 <img src="https://i.pinimg.com/474x/99/b4/a6/99b4a6435e1b0bb90c5428937fcf3334.jpg" class ="box-image">
@@ -166,7 +182,7 @@
                         <td>1 củ rưỡi</td>
                     </tr>                   
                 </table>
-                <input style="margin-left: 30%;" type="button" value="RENT" onclick="location.href = 'Profile.jsp'">
+                <input style="margin-left: 30%;" type="button" value="RENT" onclick="location.href = 'Profile2.jsp'">
             </div>
             <div class="box">
                 <img src="https://image.freepik.com/free-photo/beautiful-girl-with-cute-face_144627-11578.jpg" class ="box-image">
@@ -181,7 +197,7 @@
                         <td>3 củ</td>
                     </tr>                   
                 </table>
-                <input style="margin-left: 30%;" type="button" value="RENT" onclick="location.href = 'Profile.jsp'">
+                <input style="margin-left: 30%;" type="button" value="RENT" onclick="location.href = 'Profile2.jsp'">
             </div>
             <div class="box">
                 <img src="https://24.media.tumblr.com/ab0e19a7fc1e579e5aecaac7d8f86023/tumblr_n02ow1fxOZ1s5r68io1_500.jpg" class ="box-image">
@@ -196,7 +212,7 @@
                         <td>5 củ</td>
                     </tr>                   
                 </table>
-                <input style="margin-left: 30%;" type="button" value="RENT" onclick="location.href = 'Profile.jsp'">
+                <input style="margin-left: 30%;" type="button" value="RENT" onclick="location.href = 'Profile2.jsp'">
             </div>
         </main>           
     </body>

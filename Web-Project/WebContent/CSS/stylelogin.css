@@ -13,8 +13,8 @@ and open the template in the editor.
     text-decoration: none;
 }
 body{
-    font-family: cursive;
-    background: whitesmoke;
+    font-family: sans-serif;
+    background: radial-gradient(whitesmoke 80%,pink);
 }
 .box{
     width: 300px;

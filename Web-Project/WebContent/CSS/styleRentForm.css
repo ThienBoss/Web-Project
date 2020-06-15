@@ -43,7 +43,7 @@ body{
   margin-bottom: 25px;
 }
 .wrapper .title1 h1{
-  color: #ff9900;
+  color: #ff3333;
   text-align: center;
   margin-bottom: 25px;
 }
@@ -102,7 +102,7 @@ body{
     text-transform: uppercase;
 }
 .btn1 {
-    background: #ff9900;
+    background: #ff3333;
     text-align: center;
     padding: 15px;
     border-radius: 5px;
