@@ -34,7 +34,7 @@ public class StreamerRegister extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-        String streamerUserName = request.getParameter("signUpName");
+        String streamerUserName = request.getParameter("signUpname");
         String streamerPassword = request.getParameter("signUpPassword");
         String streamerName = request.getParameter("signUpName");
         String streamerEmail = request.getParameter("Email");
@@ -63,8 +63,22 @@ public class StreamerRegister extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
+        String streamerUserName = request.getParameter("usernames");
+        String streamerPassword = request.getParameter("passwords");
+        String streamerName = request.getParameter("fullnames");
+        String streamerEmail = request.getParameter("emails");
+        String streamerLocation = request.getParameter("location");
+        String streamerGender = request.getParameter("gender");
+        String streamerInfo  = request.getParameter("informations");
+        String streamerImage = request.getParameter("images");
+        int streamerAge = Integer.parseInt(request.getParameter("ages"));
+        int status = 0;
+        int donated = 0;
+        int hirePrice = 0;
+        int star = 0;
+
+
 	}
 
 }

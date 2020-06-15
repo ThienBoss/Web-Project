@@ -84,10 +84,29 @@ public class Query {
         return insert;
     }
 
-    public static String updateTable (String tableName, String attribute1, String attribute2, String newValue ) {
-        String update  = "UPDATE " + tableName +
-            " SET " +  attribute1 + " = " + newValue 
-            + " WHERE " + attribute2 + " = ";
+    public static String updateTable (String tableName, String[] fields, String[] newValues, String[] findFields, String[] conditions) {
+        String update  = "UPDATE " + tableName + " SET " ;
+        for (int i = 0 ; i < fields.length; i++) {
+            if(CheckType.isInteger(newValues[i])) {
+            update += fields [i] + " = " + newValues[i] + ",";
+            } else { 
+            update += fields[i] + " = " + "'" + newValues[i] + "'" + ",";
+            }
+        }
+
+        update = update.substring(0, update.length() - 1);
+        update += " WHERE ";
+
+        for (int i = 0 ; i < findFields[i].length(); i++) {
+            if(CheckType.isInteger(conditions[i])) {
+            update += findFields[i] + " = " + conditions[i] + " AND ";
+            } else { 
+            update += findFields[i] + " = " + "'" + conditions[i] + "'" + " AND ";
+            }
+        }
+        update = update.substring(0,update.length() - 4);
+        update += ";";
+        System.out.println("Query Update : " + update );
         return update;
         
     }
