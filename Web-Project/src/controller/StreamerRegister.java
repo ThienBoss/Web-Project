@@ -49,13 +49,13 @@ public class StreamerRegister extends HttpServlet {
         int star = 0;
 
         try {
-            Streamer streamer = new Streamer(streamerUserName,streamerPassword,streamerName,streamerEmail,streamerAge,donated,streamerGender,streamerInfo,streamerImage,hirePrice,star,status,streamerLocation);
-            streamerDao.save(streamer);
-            System.out.println("Streamer register successful !");
-            RequestDispatcher dispatcher = request.getRequestDispatcher("rentplayer.jsp");
+            Streamer streamer = new Streamer(streamerUsername,streamerPassword,streamerName,streamerEmail,streamerAge,donated,streamerGender,streamerInfo,streamerImage,hireprice,star,status,streamerLocation);
+            streamerdao.save(streamer);
+            system.out.println("streamer register successful !");
+            requestdispatcher dispatcher = request.getrequestdispatcher("rentplayer.jsp");
             dispatcher.forward(request,response);
-        } catch (SQLException e) {
-            e.printStackTrace();
+        } catch (sqlexception e) {
+            e.printstacktrace();
         }
 	}
 
@@ -77,7 +77,15 @@ public class StreamerRegister extends HttpServlet {
         int donated = 0;
         int hirePrice = 0;
         int star = 0;
-
+        try {
+            streamer streamer = new streamer(streamerusername,streamerpassword,streamername,streameremail,streamerage,donated,streamergender,streamerinfo,streamerimage,hireprice,star,status,streamerlocation);
+            streamerdao.update(streamer);
+            System.out.println("Streamer Update !");
+            requestdispatcher dispatcher = request.getrequestdispatcher("profile.jsp");
+            dispatcher.forward(request,response);
+        } catch (sqlexception e) {
+            e.printstacktrace();
+        }   
 
 	}
 

@@ -17,6 +17,15 @@ public class StreamerDao implements DAO<Streamer>, Closeable {
     private DatabaseConnection databaseConnection;
     private ResultSet rs ;
     private java.sql.Statement st ;
+    String[] listOfFields = {
+            TablesName.getStreamerInfo(),
+            TablesName.getStreamerImage(),
+            TablesName.getStreamerHirePrice(),
+            TablesName.getStreamerStar(),
+            TablesName.getStreamerStatus(),
+            TablesName.getStreamerLocation()};
+
+        
     
     public StreamerDao() throws SQLException {
         databaseConnection = new DatabaseConnection();
@@ -26,14 +35,11 @@ public class StreamerDao implements DAO<Streamer>, Closeable {
 
 	@Override
 	public void save(Streamer s) throws SQLException {
-        String[] listOfFields = {
-            TablesName.getStreamerInfo(),
-            TablesName.getStreamerImage(),
-            TablesName.getStreamerHirePrice(),
-            TablesName.getStreamerStar(),
-            TablesName.getStreamerStatus(),
-            TablesName.getStreamerLocation()};
 
+        int streamerID = 0;
+        String[] fields = {TablesName.getStreamerID()};
+        String[] id = {TablesName.getStreamerImage(),TablesName.getStreamerLocation()};
+        String[] conditions = {s.getImages(),s.getLocation()};
         String streamerEmail =  "" ;
         String[] streamerDetailInfo = {
            s.getInformation(),
@@ -45,10 +51,7 @@ public class StreamerDao implements DAO<Streamer>, Closeable {
         };
 
         st.executeUpdate(Query.insertToFields(TablesName.getStreamerTable(),listOfFields, streamerDetailInfo));          
-        int streamerID = 0;
-        String[] fields = {TablesName.getStreamerID()};
-        String[] id = {TablesName.getStreamerImage(),TablesName.getStreamerLocation()};
-        String[] conditions = {s.getImages(),s.getLocation()};
+
         try {
            rs = st.executeQuery(Query.selectHasCondition(
                        fields,
@@ -80,13 +83,23 @@ public class StreamerDao implements DAO<Streamer>, Closeable {
 	}
 
 	@Override
-	public void update(Streamer t) throws SQLException {
-		// TODO Auto-generated method stub
-		
+	public void update(Streamer s) throws SQLException {
+        String streamerEmail =  "" ;
+        String[] streamerDetailInfo = {
+           s.getInformation(),
+           s.getImages(),
+           Integer.toString(s.getHirePrice()),
+           Integer.toString(s.getStar()),
+           Integer.toString(s.getStatus()),
+           s.getLocation()
+        };
+        String[] streamerId = {TablesName.getStreamerID()};
+        String[] streamerConditions = { Integer.toString(s.getStreamerId())};
+	    st.executeUpdate(Query.updateTable(TablesName.getStreamerTable(),listOfFields,streamerDetailInfo,streamerId,streamerConditions));
 	}
 
 	@Override
-	public void delete(Streamer t) throws SQLException {
+	public void delete(Streamer s) throws SQLException {
 		// TODO Auto-generated method stub
 		
 	}
