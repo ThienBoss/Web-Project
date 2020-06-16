@@ -10,8 +10,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <link rel = "stylesheet" type = "text/css" href = "stylebar.css">
-        <link rel="stylesheet" href="styleprofile.css">
+        <link rel = "stylesheet" type = "text/css" href = "CSS/stylebar.css">
+        <link rel="stylesheet" href="CSS/styleprofile.css">
     </head>
     <body>
         <nav>          

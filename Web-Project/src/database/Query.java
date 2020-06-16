@@ -44,6 +44,7 @@ public class Query {
         }
         select = select.substring(0,select.length() - 4);
         select += ";";
+
         System.out.println("Query select has conditions : " + select );
         
         return select;
@@ -97,7 +98,7 @@ public class Query {
         update = update.substring(0, update.length() - 1);
         update += " WHERE ";
 
-        for (int i = 0 ; i < findFields[i].length(); i++) {
+        for (int i = 0 ; i < findFields.length; i++) {
             if(CheckType.isInteger(conditions[i])) {
             update += findFields[i] + " = " + conditions[i] + " AND ";
             } else { 

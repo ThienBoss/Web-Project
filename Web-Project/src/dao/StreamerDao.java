@@ -57,11 +57,7 @@ public class StreamerDao implements DAO<Streamer>, Closeable {
                        fields,
                        TablesName.getStreamerTable(),
                        id, conditions ));
-           System.out.println("Query select has condition : " + Query.selectHasCondition(
-                       fields,
-                       TablesName.getStreamerTable(),
-                       id, conditions ));
-           while(rs.next()) {
+                    while(rs.next()) {
                streamerID = rs.getInt(1);
            }
            s.setStreamerId (streamerID);

@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="CSS/stylebar.css">
     </head>
     <body>
-        <%
+           <%
         String user = null;
         if (session.getAttribute("user") == null){
             response.sendRedirect("Login.jsp");
@@ -23,7 +23,6 @@
                 }
             }
         }
-                
         %>
         <nav id="nav">
             <label class="logo">気持ち~</label>
@@ -32,7 +31,7 @@
                 <li><a href="rentplayer2.jsp">Streamer</a></li>
                 <li><a href="buycard2.jsp">Buy Card</a></li>
                 <li><a href="Rank2.jsp">Ranking</a></li>
-                <li>Welcome <%=userName %></li>
+                <li>Welcome <%=userName%></li>
             </ul>
         </nav>
         <script>

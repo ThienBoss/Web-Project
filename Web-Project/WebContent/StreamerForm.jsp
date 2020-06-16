@@ -19,7 +19,7 @@
             </div>
             <div class="contact-form">
               <div class="input-fields">
-                
+                  <form action="StreamerRegister" method="post">
                 <input type="text" name="fullnames" placeholder="Name">
                 <input type="text" name="emails" placeholder="Email">
                 <input type="text" name="usernames" placeholder="Username">
@@ -28,10 +28,11 @@
                 <input type="text" name="informations" placeholder="Information">
                 <input type="text" name="images" placeholder="Image">
                 <input type="text" name="locations" placeholder="Location">
+                <input type="submit" value="Change" >
+                  </form>
               </div>
               <div class="msg">
                 <textarea placeholder="Message"></textarea>
-                <div class="btn">CHANGE</div>
               </div>
             </div>
         </div>

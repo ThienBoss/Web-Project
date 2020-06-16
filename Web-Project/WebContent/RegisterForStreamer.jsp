@@ -11,8 +11,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Register</title>
         <link rel = "stylesheet" type = "text/css" href = "CSS/stylebar.css">
-        <link rel = "stylesheet" type = "text/css" href = "CSS/stylelogin1.css">
-        
+        <link rel = "stylesheet" type = "text/css" href = "CSS/stylelogin.css">
     </head>
     <body>
         <nav>          
@@ -58,13 +57,26 @@
             }
             function togglePopup() {
                 document.getElementById("popup-1").classList.toggle("active");
+
             }
+
+            function checkReType() {
+            if (document.getElementById('signUpPassword').value ==
+            document.getElementById('signUpRePassword').value) {
+            document.getElementById('message').style.color = 'green';
+            document.getElementById('message').innerHTML = 'Matching';
+            } else {
+            document.getElementById('message').style.color = 'red';
+            document.getElementById('message').innerHTML = 'Not matching';
+                }
+            } 
         </script>
         <div id="Signup" style="display: block" class="box">
             <form action="StreamerRegister" method="get">
-                <input type="text" name="signUpName" placeholder="Username">
-                <input type="password" name="signUpPassword" placeholder="Password">
-                <input type="password" name="signUpRePassword" placeholder="Retype Password">
+                <input type="text" name="signUpUserName" placeholder="Username">
+                <input type="password" name="signUpPassword" placeholder="Password" onkeyup="checkReType()">
+                <input type="password" name="signUpRePassword" placeholder="Retype Password" onkeyup="checkReType()">
+                  <span id='message'></span>
                 <input type="text" name="signUpName" placeholder="Your Name">
                 <input type="text" name="Age" placeholder="Age">
                 <input type="text" name="Email" placeholder="Email">

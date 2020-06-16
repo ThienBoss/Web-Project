@@ -64,20 +64,24 @@ public class Authentication extends HttpServlet {
         if (userDao.validateLogin(userName, password)) {
             address = "rentplayer2.jsp";
             if (userDao.isStreamer()){
-                
+                HttpSession session = request.getSession();
+                session.setAttribute("user",userName);
+                session.setMaxInactiveInterval(30*60);
+                Cookie user = new Cookie("user",userName);
+                response.addCookie(user);
                 System.out.println("Welcome Streamer " + userName);
                 RequestDispatcher dispatcher = request.getRequestDispatcher(address);
                 dispatcher.forward(request,response);
                 
             } else {
-            HttpSession session = request.getSession();
-            session.setAttribute("user",userName);
-            session.setMaxInactiveInterval(30*60);
-            Cookie user = new Cookie("user",userName);
-            response.addCookie(user);
-            System.out.println("Welcome User " + userName);
-            RequestDispatcher dispatcher = request.getRequestDispatcher(address);
-            dispatcher.forward(request,response);
+                HttpSession session = request.getSession();
+                session.setAttribute("user",userName);
+                session.setMaxInactiveInterval(30*60);
+                Cookie user = new Cookie("user",userName);
+                response.addCookie(user);
+                System.out.println("Welcome User " + userName);
+                RequestDispatcher dispatcher = request.getRequestDispatcher(address);
+                dispatcher.forward(request,response);
             }
         } else {
             RequestDispatcher dispatcher = request.getRequestDispatcher("FailedPopup.jsp");

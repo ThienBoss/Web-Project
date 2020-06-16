@@ -10,8 +10,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Buy Card</title>
-        <link rel = "stylesheet" type = "text/css" href = "styleBuycard.css">
-        <link rel = "stylesheet" type = "text/css" href = "stylebar.css">
+        <link rel = "stylesheet" type = "text/css" href = "CSS/styleBuycard.css">
+        <link rel = "stylesheet" type = "text/css" href = "CSS/stylebar.css">
         
     </head>
     <body>
