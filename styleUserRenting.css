@@ -1,0 +1,78 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 16-06-2020, 18:41:25
+    Author     : Quyet
+*/
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  font-family: 'Roboto', sans-serif;
+  
+}
+
+body{
+  background: url('https://cutewallpaper.org/21/anime-wallpaper-4k-phone/anime-4K-wallpapers-for-your-desktop-or-mobile-screen-free-.jpg') no-repeat top center;
+  background-size: cover;
+  height: 100vh;
+}
+
+.wrapper{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 400px;
+  background: rgba(0,0,0,0.8);
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.wrapper .title1 h1{
+  color: #ff3333;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.contact-form{
+  display: flex;
+}
+
+.input-fields,
+.msg{
+  width: 48%;
+}
+
+::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: white;
+}
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #c5ecfd;
+}
+:-ms-input-placeholder {
+  /* IE 10+ */
+  color: #c5ecfd;
+}
+
+.btn1 {
+    background: #ff3333;
+    text-align: center;
+    padding: 15px;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+
+
