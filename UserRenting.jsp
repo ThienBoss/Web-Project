@@ -41,6 +41,7 @@
                           <td><p style="color: white">Description: </p></td>
                           <td><p style="color: white">#No Specific Description</p></td>
                       </tr>
+                     
                       <tr>
                         <td><div class="btn1" onclick="location.href='#REMOVE'">REMOVE</div></td>
                         <td><div class="btn1" style="padding-left: 40px; padding-right: 40px">CONFIRM</div></td>
