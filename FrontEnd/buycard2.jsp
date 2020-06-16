@@ -10,8 +10,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Buy Card</title>
-        <link rel = "stylesheet" type = "text/css" href = "styleBuycard.css">
-        <link rel = "stylesheet" type = "text/css" href = "stylebar.css">
+        <link rel = "stylesheet" type = "text/css" href = "CSS/styleBuycard.css">
+        <link rel = "stylesheet" type = "text/css" href = "CSS/stylebar.css">
         
     </head>
     <body>
@@ -35,6 +35,7 @@
                 <li><a href="buycard2.jsp">Buy Card</a></li>
                 <li><a href="Rank2.jsp">Ranking</a></li>
                 <li>Welcome Thanh</li>
+                <li><button name="logout" value="logout">Log Out</button></li>
             </ul>
         </nav>
         <br>

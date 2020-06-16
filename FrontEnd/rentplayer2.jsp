@@ -5,8 +5,8 @@
         <meta charset="utf-8">
         <title></title>
         <link href="https://fonts.googleapis.com/css?family=Dokdo" rel="stylesheet">
-        <link rel="stylesheet" href="styleplayer.css">
-        <link rel="stylesheet" href="stylebar.css">
+        <link rel="stylesheet" href="CSS/styleplayer.css">
+        <link rel="stylesheet" href="CSS/stylebar.css">
     </head>
     <body>
         <nav id="nav">
@@ -17,6 +17,7 @@
                 <li><a href="buycard2.jsp">Buy Card</a></li>
                 <li><a href="Rank2.jsp">Ranking</a></li>
                 <li>Welcome Thanh</li>
+                <li><button name="logout" value="logout">Log Out</button></li>
             </ul>
         </nav>
         <script>

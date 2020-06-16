@@ -11,9 +11,9 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
         
-        <link rel = "stylesheet" type = "text/css" href = "stylebar.css">
-        <link rel = "stylesheet" type = "text/css" href = "styleimage.css">
-        <link rel = "stylesheet" type = "text/css" href = "styleuser.css">
+        <link rel = "stylesheet" type = "text/css" href = "CSS/stylebar.css">
+        <link rel = "stylesheet" type = "text/css" href = "CSS/styleimage.css">
+        <link rel = "stylesheet" type = "text/css" href = "CSS/styleuser.css">
         <style>
         </style>
     </head>
@@ -38,6 +38,7 @@
                 <li><a href="buycard2.jsp">Buy Card</a></li>
                 <li><a href="Rank2.jsp">Ranking</a></li>
                 <li>Welcome Thanh</li>
+                <li><button name="logout" value="logout">Log Out</button></li>
             </ul>
         </nav>
         
