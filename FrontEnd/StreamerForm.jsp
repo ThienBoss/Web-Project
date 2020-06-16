@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel = "stylesheet" type = "text/css" href = "styleStreamerForm.css">
+        <link rel = "stylesheet" type = "text/css" href = "CSS/styleStreamerForm.css">
         <title>JSP Page</title>
     </head>
     <body>
@@ -28,11 +28,9 @@
                 <input type="text" name="informations" placeholder="Information">
                 <input type="text" name="images" placeholder="Image">
                 <input type="text" name="locations" placeholder="Location">
+                <input type="submit" name="submit" value="CHANGE">
               </div>
-              <div class="msg">
-                <textarea placeholder="Message"></textarea>
-                <div class="btn">CHANGE</div>
-              </div>
+              
             </div>
         </div>
     </body>
