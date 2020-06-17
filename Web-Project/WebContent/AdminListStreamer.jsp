@@ -4,8 +4,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>List Streamer</title>
-        <link rel = "stylesheet" type = "text/css" href = "styleAdminListStreamer.css">
-        <link rel = "stylesheet" type = "text/css" href = "styleAdminBar.css">
+        <link rel = "stylesheet" type = "text/css" href = "CSS/styleAdminListStreamer.css">
+        <link rel = "stylesheet" type = "text/css" href = "CSS/styleAdminBar.css">
         <style>
             
         </style>

@@ -36,9 +36,9 @@ public class Authentication extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
         response.setContentType("text/html");
-        String fullName = request.getParameter("signUpFullName");
+        String fullName = request.getParameter("signUpName");
         String email = request.getParameter("Email");
-        String userName = request.getParameter("signUpName");
+        String userName = request.getParameter("signUpUserName");
         System.out.println("This is user name :" + userName);
         String password = request.getParameter("signUpPassword");
         String rePassword = request.getParameter("signUpRePassword");
@@ -64,25 +64,15 @@ public class Authentication extends HttpServlet {
         if (userDao.validateLogin(userName, password)) {
             address = "rentplayer2.jsp";
             if (userDao.isStreamer()){
-                HttpSession session = request.getSession();
-                session.setAttribute("user",userName);
-                session.setMaxInactiveInterval(30*60);
-                Cookie user = new Cookie("user",userName);
-                response.addCookie(user);
                 System.out.println("Welcome Streamer " + userName);
-                RequestDispatcher dispatcher = request.getRequestDispatcher(address);
-                dispatcher.forward(request,response);
-                
             } else {
-                HttpSession session = request.getSession();
-                session.setAttribute("user",userName);
-                session.setMaxInactiveInterval(30*60);
-                Cookie user = new Cookie("user",userName);
-                response.addCookie(user);
                 System.out.println("Welcome User " + userName);
-                RequestDispatcher dispatcher = request.getRequestDispatcher(address);
-                dispatcher.forward(request,response);
             }
+            Cookie c = new Cookie("user",userName);
+            response.addCookie(c);
+            request.getSession().setAttribute("user", userName);
+            RequestDispatcher dispatcher = request.getRequestDispatcher(address);
+            dispatcher.forward(request,response);
         } else {
             RequestDispatcher dispatcher = request.getRequestDispatcher("FailedPopup.jsp");
             dispatcher.forward(request,response);

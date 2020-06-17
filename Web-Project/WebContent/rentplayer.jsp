@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="CSS/stylebar.css">
     </head>
     <body>
+        <form action="StreamerRegister" method="post">
         <nav id="nav">
             <label class="logo">気持ち~</label>
             <ul>
@@ -82,7 +83,7 @@
                 <img src="https://data.whicdn.com/images/331340654/original.jpg" class ="box-image">
                 <table style="margin: 0 auto">
                     <tr>
-                        <td>Vợ Thanh</td>
+                        <td>${Streamer.fullname}</td>
                     </tr>
                     <tr>
                         <td>18 tuổi</td>
@@ -199,5 +200,6 @@
                 <input style="margin-left: 30%;" type="button" value="RENT" onclick="location.href = 'Profile.jsp'">
             </div>
         </main>           
+        </form>
     </body>
 </html>

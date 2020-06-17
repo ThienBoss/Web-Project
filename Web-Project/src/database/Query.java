@@ -9,7 +9,7 @@ public class Query {
 
     
     public static String selectAll (String tableName ) {
-        String selectAll =  "SELECT * FROM " + tableName;
+        String selectAll =  "SELECT * FROM " + tableName + ";";
         return selectAll;
     }
 

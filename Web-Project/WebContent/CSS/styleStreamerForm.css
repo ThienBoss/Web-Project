@@ -17,7 +17,7 @@ body{
 
 .wrapper{
   position: absolute;
-  top: 50%;
+  top: 70%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
@@ -26,6 +26,7 @@ body{
   padding: 30px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  text-align: center;
 }
 
 .wrapper .title h1{
@@ -35,14 +36,57 @@ body{
 }
 
 .contact-form{
+
   display: flex;
+  transform: translate(22%, 0%);
 }
 
 .input-fields{
-  display: flex;
+    margin: autp;
+   text-align: center;
+  display: block;
   flex-direction: column;
-  margin-right: 4%;
+  margin-right: 50%;
+
   
+  
+}
+.input-fields input[type = "text"], .box input[type = "password"]{
+    border: 0;
+    background: white;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid wheat;
+    padding: 14px 10px;
+    width: 200px;
+    outline: none;
+    color: black;
+    border-radius: 24px;
+    transition: 0.25s;
+}
+.input-fields input[type = "text"]:focus, .box input[type = "password"]:focus{
+    position: inherit;
+    width: 250px;
+}
+.input-fields input[type = "submit"]{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    font-family: inherit;
+    border: 2px solid #c5ecfd;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding: 10px 30px;
+    width: 130px;
+    outline: none;
+    color: #c5ecfd;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+    font-weight: bold;
 }
 
 .input-fields,
@@ -67,7 +111,7 @@ body{
 
 ::-webkit-input-placeholder {
   /* Chrome/Opera/Safari */
-  color: #c5ecfd;
+  color: black;
 }
 ::-moz-placeholder {
   /* Firefox 19+ */
@@ -79,13 +123,21 @@ body{
 }
 
 .btn {
-    background: #39b7dd;
+    border: 0;
+    background: white;
+    display: block;
+    margin: 20px auto;
     text-align: center;
-    padding: 15px;
-    border-radius: 5px;
-    color: #fff;
+    font-family: inherit;
+    border: 2px solid gray;
+    padding: 10px 30px;
+    width: 130px;
+    outline: none;
+    color: red;
+    border-radius: 24px;
+    transition: 0.25s;
     cursor: pointer;
-    text-transform: uppercase;
+    font-weight: bold;
 }
 
 

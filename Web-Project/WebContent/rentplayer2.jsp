@@ -9,21 +9,7 @@
         <link rel="stylesheet" href="CSS/stylebar.css">
     </head>
     <body>
-           <%
-        String user = null;
-        if (session.getAttribute("user") == null){
-            response.sendRedirect("Login.jsp");
-            } else user = (String) session.getAttribute("user");
-            String userName = null;
-            Cookie[] cookies = request.getCookies();
-            if(cookies != null ) {
-            for(Cookie c : cookies) {
-                if(c.getName().equals("user")) {
-                    userName = c.getValue();
-                }
-            }
-        }
-        %>
+ 		<form action="Logout" method="get">
         <nav id="nav">
             <label class="logo">気持ち~</label>
             <ul>
@@ -31,7 +17,10 @@
                 <li><a href="rentplayer2.jsp">Streamer</a></li>
                 <li><a href="buycard2.jsp">Buy Card</a></li>
                 <li><a href="Rank2.jsp">Ranking</a></li>
-                <li>Welcome <%=userName%></li>
+                <li>Welcome, ${user} </li>
+               
+                <li><button name="logout" value="logout">Log Out</button></li>
+				</form>
             </ul>
         </nav>
         <script>
@@ -215,4 +204,4 @@
             </div>
         </main>           
     </body>
-</html>
+</html

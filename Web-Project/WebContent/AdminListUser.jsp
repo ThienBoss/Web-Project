@@ -3,8 +3,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>List User</title>
-        <link rel = "stylesheet" type = "text/css" href = "styleAdminListUser.css">
-        <link rel = "stylesheet" type = "text/css" href = "styleAdminBar.css">
+        <link rel = "stylesheet" type = "text/css" href = "CSS/styleAdminListUser.css">
+        <link rel = "stylesheet" type = "text/css" href = "CSS/styleAdminBar.css">
         <style>
             
         </style>

@@ -10,7 +10,7 @@ public class User {
 	private int donated;
     private int streamerId;
 
-	public User( String userName, String password, String fulName, String email,int age , int donated,String sex, int streamerId) {
+	public User( String userName, String password, String fulName, String email,int age, int donated, String sex, int streamerId) {
 		super();
 		
 		this.userName = userName;

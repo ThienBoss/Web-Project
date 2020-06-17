@@ -23,6 +23,25 @@ public class UserDao implements DAO<User>, Closeable {
 		st = databaseConnection.connectToDatabase().createStatement();
 	}
 
+    public List<User> getAll() throws SQLException {
+        List<User> allUser = new ArrayList<User>();
+           rs = st.executeQuery(Query.selectAll(TablesName.getUserTable())); 
+           while(rs.next()){
+               allUser.add(new User (
+                           rs.getString(1),
+                           rs.getString(2),
+                           rs.getString(3),
+                           rs.getString(4),
+                           rs.getInt(5),
+                           rs.getInt(6),
+                           rs.getString(7),
+                           rs.getInt(8)
+                           ));
+           }
+
+           return allUser;
+    }
+
     public boolean validateLogin(String userName, String password) {
     	String userPassword = "";
         int streamerID = 0;
