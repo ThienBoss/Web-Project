@@ -13,7 +13,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-    	<form actopn 
+        <form action="StreamerRegister" method="post"> 
         <div class="wrapper">
             <div class="title">
               <h1>CHANGE INFORMATION FORM</h1>
@@ -29,10 +29,12 @@
                 <input type="text" name="informations" placeholder="Information">
                 <input type="text" name="images" placeholder="Image">
                 <input type="text" name="locations" placeholder="Location">
+                <input type="text" name="gender" placeholder="Gender">
                 <input type="submit" name="submit" value="CHANGE">
               </div>
               
             </div>
         </div>
+        </form>
     </body>
 </html>

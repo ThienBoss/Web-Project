@@ -53,7 +53,7 @@ body{
 }
 .input-fields input[type = "text"], .box input[type = "password"]{
     border: 0;
-    background: white;
+    background: black;
     display: block;
     margin: 20px auto;
     text-align: center;

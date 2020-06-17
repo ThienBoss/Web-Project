@@ -40,12 +40,12 @@ public class StreamerRegister extends HttpServlet {
         String streamerEmail = request.getParameter("Email");
         String streamerLocation = request.getParameter("Location");
         String streamerGender = request.getParameter("gender");
-        String streamerInfo  = "";
-        String streamerImage = "";
+        String streamerInfo  = request.getParameter("info");
+        String streamerImage = request.getParameter("image");
         int streamerAge = Integer.parseInt(request.getParameter("age"));
         int status = 0;
         int donated = 0;
-        int hirePrice = 0;
+        int hirePrice = Integer.parseInt(request.getParameter("price"));
         int star = 0;
 
         try {
@@ -70,12 +70,12 @@ public class StreamerRegister extends HttpServlet {
         String streamerLocation = request.getParameter("locations");
         String streamerInfo  = request.getParameter("informations");
         String streamerImage = request.getParameter("images");
+        String streamerGender= request.getParameter("gender");
         int streamerAge = Integer.parseInt(request.getParameter("ages"));
         int status = 0;
         int donated = 0;
         int hirePrice = 0;
         int star = 0;
-        String streamerGender ="female";
         try {
             Streamer streamer = new Streamer(streamerUserName,streamerPassword,streamerName,streamerEmail,streamerAge,donated,streamerGender,streamerInfo,streamerImage,hirePrice,star,status,streamerLocation);
             streamerDao.update(streamer);

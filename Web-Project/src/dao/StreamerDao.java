@@ -45,7 +45,6 @@ public class StreamerDao implements DAO<Streamer>, Closeable {
                            rs.getInt(5),
                            rs.getInt(6),
                            rs.getString(7),
-                           rs.getInt(8),
                            rs.getString(10),
                            rs.getString(11),
                            rs.getInt(12),
@@ -63,8 +62,8 @@ public class StreamerDao implements DAO<Streamer>, Closeable {
 
         int streamerID = 0;
         String[] fields = {TablesName.getStreamerID()};
-        String[] id = {TablesName.getStreamerImage(),TablesName.getStreamerLocation()};
-        String[] conditions = {s.getImages(),s.getLocation()};
+        String[] id = {tablesname.getstreamerimage(),tablesname.getstreamerlocation()};
+        String[] conditions = {s.getimages(),s.getlocation()};
         String streamerEmail =  "" ;
         String[] streamerDetailInfo = {
            s.getInformation(),
@@ -105,7 +104,17 @@ public class StreamerDao implements DAO<Streamer>, Closeable {
 
 	@Override
 	public void update(Streamer s) throws SQLException {
-        String streamerEmail =  "" ;
+        int streamerID = 0;
+        String id = {TablesName.getStreamerId()}; 
+        String[] conditions = {s.getimages(),s.getlocation()};
+        try {
+           rs = st.executeQuery(Query.selectHasCondition(
+                       fields,
+                       TablesName.getStreamerTable(),
+                       id, conditions ));
+                    while(rs.next()) {
+               streamerID = rs.getInt(1);
+        }
         String[] streamerDetailInfo = {
            s.getInformation(),
            s.getImages(),
@@ -114,9 +123,10 @@ public class StreamerDao implements DAO<Streamer>, Closeable {
            Integer.toString(s.getStatus()),
            s.getLocation()
         };
+        System.out.println("StreamID : " + streamerID;
         String[] streamerId = {TablesName.getStreamerID()};
         String[] streamerConditions = { Integer.toString(s.getStreamerId())};
-	    st.executeUpdate(Query.updateTable(TablesName.getStreamerTable(),listOfFields,streamerDetailInfo,streamerId,streamerConditions));
+	    st.executeUpdate(Query.updateTable(TablesName.getStreamerTable(),listOfFields,streamerDetailInfo,streamerID,streamerConditions));
 	}
 
 	@Override

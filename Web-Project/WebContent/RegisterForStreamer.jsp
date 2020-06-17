@@ -78,8 +78,11 @@
                 <input type="password" name="signUpRePassword" placeholder="Retype Password" onkeyup="checkReType()">
                   <span id='message'></span>
                 <input type="text" name="signUpName" placeholder="Your Name">
-                <input type="text" name="Age" placeholder="Age">
+                <input type="text" name="age" placeholder="Age">
                 <input type="text" name="Email" placeholder="Email">
+                <input type="text" name="image" placeholder="Image">
+                <input type="text" name="price" placeholder="Price">
+                <input type="text" name="info" placeholder="info">
                 <input type="text" name="Location" placeholder="Location">
                 Gender
                 <input type="radio" value="male" name="gender">Male

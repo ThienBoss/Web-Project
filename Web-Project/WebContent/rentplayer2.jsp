@@ -97,7 +97,7 @@
             %>
 
             <div class="box">
-                <img src="https://data.whicdn.com/images/331340654/original.jpg" class ="box-image">
+                <img src=<%=s.getImages()%> class ="box-image">
                 <table style="margin: 0 auto">
                     <tr>
                         <td><%=s.getFullName()%></td>
@@ -113,111 +113,6 @@
             </div>
             </div>
             <% }  %>
-            <div class="box">
-                <img src="https://ae01.alicdn.com/kf/HTB1Zj1ubiYrK1Rjy0Fdq6ACvVXaj.jpg" class ="box-image">
-                <table style="margin: 0 auto">
-                    <tr>
-                        <td>Vợ Quyết</td>
-                    </tr>
-                    <tr>
-                        <td>20 tuổi</td>
-                    </tr>
-                    <tr>
-                        <td>5 lít</td>
-                    </tr>                   
-                </table>
-                <input style="margin-left: 30%;" type="button" value="RENT" onclick="location.href = 'Profile2.jsp'">
-            </div>
-            <div class="box">
-                <img src="https://gamek.mediacdn.vn/133514250583805952/2020/5/6/-15887585895041819860279.jpg" class ="box-image">
-                <table style="margin: 0 auto">
-                    <tr>
-                        <td>Vợ Dũ</td>
-                    </tr>
-                    <tr>
-                        <td>19 tuổi</td>
-                    </tr>
-                    <tr>
-                        <td>9 xị</td>
-                    </tr>                   
-                </table>
-                <input style="margin-left: 30%;" type="button" value="RENT" onclick="location.href = 'Profile2.jsp'">
-            </div>               
-            <div class="box">
-                <img src="https://gamek.mediacdn.vn/thumb_w/640/133514250583805952/2020/2/3/photo-1-15807152714491788209393.jpg" class ="box-image">
-                <table style="margin: 0 auto">
-                    <tr>
-                        <td>Vợ Thiên</td>
-                    </tr>
-                    <tr>
-                        <td>21 tuổi</td>
-                    </tr>
-                    <tr>
-                        <td>contact for more information</td>
-                    </tr>                   
-                </table>
-                <input style="margin-left: 30%;" type="button" value="RENT" onclick="location.href = 'Profile2.jsp'">
-            </div>
-            <div class="box">
-                <img src="https://images.pexels.com/photos/1391498/pexels-photo-1391498.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class ="box-image">
-                <table style="margin: 0 auto">
-                    <tr>
-                        <td>Bồ nhí Thanh</td>
-                    </tr>
-                    <tr>
-                        <td>25 tuổi</td>
-                    </tr>
-                    <tr>
-                        <td>7 cành</td>
-                    </tr>                   
-                </table>
-                <input style="margin-left: 30%;" type="button" value="RENT" onclick="location.href = 'Profile2.jsp'">
-            </div>
-            <div class="box">
-                <img src="https://i.pinimg.com/474x/99/b4/a6/99b4a6435e1b0bb90c5428937fcf3334.jpg" class ="box-image">
-                <table style="margin: 0 auto">
-                    <tr>
-                        <td>Bồ nhí Quyết</td>
-                    </tr>
-                    <tr>
-                        <td>14 tuổi</td>
-                    </tr>
-                    <tr>
-                        <td>1 củ rưỡi</td>
-                    </tr>                   
-                </table>
-                <input style="margin-left: 30%;" type="button" value="RENT" onclick="location.href = 'Profile2.jsp'">
-            </div>
-            <div class="box">
-                <img src="https://image.freepik.com/free-photo/beautiful-girl-with-cute-face_144627-11578.jpg" class ="box-image">
-                <table style="margin: 0 auto">
-                    <tr>
-                        <td>Bồ nhí Dũ</td>
-                    </tr>
-                    <tr>
-                        <td>28 tuổi</td>
-                    </tr>
-                    <tr>
-                        <td>3 củ</td>
-                    </tr>                   
-                </table>
-                <input style="margin-left: 30%;" type="button" value="RENT" onclick="location.href = 'Profile2.jsp'">
-            </div>
-            <div class="box">
-                <img src="https://24.media.tumblr.com/ab0e19a7fc1e579e5aecaac7d8f86023/tumblr_n02ow1fxOZ1s5r68io1_500.jpg" class ="box-image">
-                <table style="margin: 0 auto">
-                    <tr>
-                        <td>Bồ nhí Thiên</td>
-                    </tr>
-                    <tr>
-                        <td>24 tuổi</td>
-                    </tr>
-                    <tr>
-                        <td>5 củ</td>
-                    </tr>                   
-                </table>
-                <input style="margin-left: 30%;" type="button" value="RENT" onclick="location.href = 'Profile2.jsp'">
-            </div>
         </main>           
     </body>
 </html>
