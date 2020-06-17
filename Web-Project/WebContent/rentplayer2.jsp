@@ -1,4 +1,10 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.util.List"%>
+<%@page import="model.User"%>
+<%@page import="model.Streamer"%>
+<%@page import="dao.UserDao"%>
+<%@page import="dao.StreamerDao"%>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
@@ -82,21 +88,31 @@
             </tr>
         </table>
         <main>
+        <div id="main">
+            <% 
+            StreamerDao streamer = new StreamerDao();
+            List<Streamer> streamers = streamer.getAll(); 
+            System.out.println("Get All User");
+              for(Streamer s : streamers) {
+            %>
+
             <div class="box">
                 <img src="https://data.whicdn.com/images/331340654/original.jpg" class ="box-image">
                 <table style="margin: 0 auto">
                     <tr>
-                        <td>Vợ Thanh</td>
+                        <td><%=s.getFullName()%></td>
                     </tr>
                     <tr>
-                        <td>18 tuổi</td>
+                        <td> <%=s.getAge()%></td>
                     </tr>
                     <tr>
-                        <td>2 củ rưỡi</td>
+                        <td><%=s.getHirePrice()%></td>
                     </tr>                   
                 </table>
                 <input style="margin-left: 30%;" type="button" value="RENT" onclick="location.href = 'Profile2.jsp'">
             </div>
+            </div>
+            <% }  %>
             <div class="box">
                 <img src="https://ae01.alicdn.com/kf/HTB1Zj1ubiYrK1Rjy0Fdq6ACvVXaj.jpg" class ="box-image">
                 <table style="margin: 0 auto">
@@ -204,4 +220,4 @@
             </div>
         </main>           
     </body>
-</html
+</html>

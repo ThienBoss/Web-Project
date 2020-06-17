@@ -28,6 +28,22 @@ public class Query {
         }
         return select ;
     }
+    
+    public static String insertToTable (String tableName, String[] listOfValues) {
+        String insert = "INSERT INTO "  + tableName +  " VALUES ( " ; 
+        for (int i  = 0; i < listOfValues.length; i++) {
+            if (CheckType.isInteger(listOfValues[i])){
+            insert +=  listOfValues[i] + ",";
+            } else {
+            insert += "'" + listOfValues[i] + "'" + "," ; 
+            }
+        }
+        insert = insert.substring(0,insert.length() - 1);
+        insert += ");";
+        System.out.println(insert);
+        return insert;
+    }
+
     public static String  selectHasCondition (String[] listofFields, String tableName, String[] id, String[] condition) {
         String select = "SELECT "  ;
         for (int i = 0; i < listofFields.length; i++) {
@@ -48,21 +64,6 @@ public class Query {
         System.out.println("Query select has conditions : " + select );
         
         return select;
-    }
-    
-    public static String insertToTable (String tableName, String[] listOfValues) {
-        String insert = "INSERT INTO "  + tableName +  " VALUES ( " ; 
-        for (int i  = 0; i < listOfValues.length; i++) {
-            if (CheckType.isInteger(listOfValues[i])){
-            insert +=  listOfValues[i] + ",";
-            } else {
-            insert += "'" + listOfValues[i] + "'" + "," ; 
-            }
-        }
-        insert = insert.substring(0,insert.length() - 1);
-        insert += ");";
-        System.out.println(insert);
-        return insert;
     }
 
     public static String insertToFields (String tableName,String[] fields, String[] listOfValues) {
@@ -115,6 +116,11 @@ public class Query {
     public static String deleteTable (String tableName) {
         String delete = "DROP TABLE " + tableName; 
         return delete;
+    }
+
+    public static String selectStreamer() {
+    String selectStreamer = "Select * from (select * from User where StreamerID <> -1) as a inner join Streamer on a.StreamerID = Streamer.StreamerID;"; 
+    return selectStreamer;
     }
 
 }

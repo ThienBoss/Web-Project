@@ -11,6 +11,7 @@ import database.DatabaseConnection;
 import database.Query;
 import database.TablesName;
 import model.Streamer;
+import model.User;
 import database.DatabaseConnection;
 
 public class StreamerDao implements DAO<Streamer>, Closeable {
@@ -31,7 +32,31 @@ public class StreamerDao implements DAO<Streamer>, Closeable {
         databaseConnection = new DatabaseConnection();
         st = databaseConnection.connectToDatabase().createStatement();
     }
-	
+    
+    public List<Streamer> getAll() throws SQLException {
+        List<Streamer> streamers = new ArrayList<Streamer>();
+           rs = st.executeQuery(Query.selectStreamer()); 
+           while(rs.next()){
+               streamers.add(new Streamer (
+                           rs.getString(1),
+                           rs.getString(2),
+                           rs.getString(3),
+                           rs.getString(4),
+                           rs.getInt(5),
+                           rs.getInt(6),
+                           rs.getString(7),
+                           rs.getInt(8),
+                           rs.getString(10),
+                           rs.getString(11),
+                           rs.getInt(12),
+                           rs.getInt(13),
+                           rs.getInt(14),
+                           rs.getString(15)
+                           ));
+           }
+           System.out.println("ADDED User to List !");
+           return streamers;
+    }	
 
 	@Override
 	public void save(Streamer s) throws SQLException {

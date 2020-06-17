@@ -16,7 +16,7 @@ public class Streamer {
     private int status;
 	private String location;
 
-	public Streamer( String userName, String password, String fullName, String email, int age, int donated,String sex, String information, String images, int hirePrice, int star, int status, String location) {
+	public Streamer( String userName, String password, String fullName, String email, int age, int donated,String sex,int streamerId, String information, String images, int hirePrice, int star, int status, String location) {
 		super();
 		this.userName = userName;
 		this.password = password;
@@ -25,6 +25,7 @@ public class Streamer {
 		this.age = age;
 		this.donated = donated;
         this.sex = sex;
+        this.streamerId = streamerId;
 		this.information = information;
 		this.images = images;
 		this.hirePrice = hirePrice;

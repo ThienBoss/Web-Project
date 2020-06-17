@@ -1,5 +1,6 @@
 package dao;
 import java.io.Closeable;
+
 import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
@@ -38,7 +39,7 @@ public class UserDao implements DAO<User>, Closeable {
                            rs.getInt(8)
                            ));
            }
-
+           System.out.println("ADDED User to List !");
            return allUser;
     }
 

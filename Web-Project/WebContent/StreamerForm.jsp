@@ -13,6 +13,7 @@
         <title>JSP Page</title>
     </head>
     <body>
+    	<form actopn 
         <div class="wrapper">
             <div class="title">
               <h1>CHANGE INFORMATION FORM</h1>
