@@ -34,10 +34,10 @@
             <label class="logo">気持ち~</label>
             <ul>
                 <li><a href="Streamer.jsp">User</a></li>
-                <li><a href="rentplayer2.jsp">Streamer</a></li>
-                <li><a href="buycard2.jsp">Buy Card</a></li>
-                <li><a href="Rank2.jsp">Ranking</a></li>
-                <li>Welcome Thanh</li>
+                <li><a href="rentplayer3.jsp">Streamer</a></li>
+                <li><a href="buycard3.jsp">Buy Card</a></li>
+                <li><a href="Rank3.jsp">Ranking</a></li>
+                <li>Welcome MisThy</li>
                 <li><button name="logout" value="logout" >Log Out</button></li>
             </ul>
         </nav>
