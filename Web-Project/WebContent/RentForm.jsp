@@ -10,7 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel = "stylesheet" type = "text/css" href = "CSS/styleRentForm.css">
-        <title>JSP Page</title>
+        <title>Rent Form </title>
     </head>
     <body>
         <div class="wrapper">
@@ -22,7 +22,7 @@
                   <table>
                       <tr>
                           <td><p style="color: white">Name:<p></td>
-                          <td><p style="color: white">Vợ Thanh<p></td>
+                          <td><p style="color: white">${streamerProfile.getFullName()}<p></td>
                       </tr>
                       <br>
                       <tr>

@@ -16,5 +16,7 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="/home/boss/Downloads/jstl-1.2.jar"/>
+	<classpathentry kind="lib" path="/home/boss/Downloads/activation.jar"/>
+	<classpathentry kind="lib" path="/home/boss/Downloads/javax.mail.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
