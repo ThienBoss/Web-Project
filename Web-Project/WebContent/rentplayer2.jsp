@@ -1,10 +1,9 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.util.List"%>
 <%@page import="model.User"%>
 <%@page import="model.Streamer"%>
 <%@page import="dao.UserDao"%>
 <%@page import="dao.StreamerDao"%>
-
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
@@ -15,18 +14,17 @@
         <link rel="stylesheet" href="CSS/stylebar.css">
     </head>
     <body>
- 		<form action="Logout" method="get">
         <nav id="nav">
             <label class="logo">気持ち~</label>
             <ul>
-                <li><a href="User.jsp">User</a></li>
-                <li><a href="rentplayer2.jsp">Streamer</a></li>
-                <li><a href="buycard2.jsp">Buy Card</a></li>
-                <li><a href="Rank2.jsp">Ranking</a></li>
-                <li>Welcome, ${currentUser.getUserName()} </li>
-               
+                <li><a href="Streamer.jsp">User</a></li>
+                <li><a href="rentplayer3.jsp">Streamer</a></li>
+                <li><a href="buycard3.jsp">Buy Card</a></li>
+                <li><a href="Rank3.jsp">Ranking</a></li>
+                <li>Welcome , ${currentUser.getUserName()}</li>
+                <form action="Logout" method="get">
                 <li><button name="logout" value="logout">Log Out</button></li>
-				</form>
+                </form>
             </ul>
         </nav>
         <script>
@@ -88,18 +86,27 @@
             </tr>
         </table>
         <main>
+        <form action="StreamerProfile" method="get">
         <div id="main">
             <% 
             StreamerDao streamer = new StreamerDao();
             List<Streamer> streamers = streamer.getAll(); 
-            System.out.println("Get All User");
+            System.out.println("Get All Streamer");
+            String[] streamerIds = new String[streamers.size()];
+                
+            int i = 0;
               for(Streamer s : streamers) {
-              String currentStreamerId = Integer.toString(s.getStreamerId());
+                streamerIds[i] = Integer.toString(streamer.getStreamerID(s));
+                System.out.println("StreamerID each i++ : " + streamerIds[i]);
             %>
-
-            <div class="box" name= "currentStreamerID" value= <%=currentStreamerId%> >
+            
+            <div class="box" >
                 <img src=<%=s.getImages()%> class ="box-image">
-                <table style="margin: 0 auto">
+                <table style="margin: 0 auto"  >
+                    <tr>
+                        <td>StreamerID: <%=streamerIds[i]%></td>
+                    </tr>
+
                     <tr>
                         <td>Name: <%=s.getFullName()%></td>
                     </tr>
@@ -110,10 +117,12 @@
                         <td>Hire Price: <%=s.getHirePrice()%> VND</td>
                     </tr>                   
                 </table>
-                <input style="margin-left: 30%;" type="button" value="RENT" onclick="location.href = 'Profile2.jsp'">
+                <input style="margin-left: 30%;" type="submit" name="RENT" value=<%=streamerIds[i]%> onclick="location.href = 'Profile2.jsp'">
             </div>
+            <% i++;
+            }  %>
             </div>
-            <% }  %>
+            </form>
         </main>           
     </body>
 </html>

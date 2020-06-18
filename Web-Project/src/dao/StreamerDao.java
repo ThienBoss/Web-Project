@@ -144,4 +144,17 @@ public class StreamerDao implements DAO<Streamer>, Closeable {
 		
 	}
 
+    public int getStreamerID(Streamer s) throws SQLException{
+    int streamerId = 0;
+    String[] streamerIdField = {TablesName.getStreamerID()};
+    String[] id = {TablesName.getUserName()};
+    String[] value = {s.getUserName()};
+    rs = st.executeQuery(Query.selectHasCondition(streamerIdField,TablesName.getUserTable(),id,value));
+    while(rs.next()){
+        streamerId = rs.getInt(1);
+    }
+    return streamerId;
+    
+  }
+
 }

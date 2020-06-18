@@ -25,6 +25,7 @@ public class Streamer {
 		this.age = age;
 		this.donated = donated;
         this.sex = sex;
+        this.streamerId = streamerId;
 		this.information = information;
 		this.images = images;
 		this.hirePrice = hirePrice;
