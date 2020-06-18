@@ -26,7 +26,7 @@ public class UserDao implements DAO<User>, Closeable {
 
     public List<User> getAll() throws SQLException {
         List<User> allUser = new ArrayList<User>();
-           rs = st.executeQuery(Query.selectAll(TablesName.getUserTable())); 
+           rs = st.executeQuery(Query.selectAllUser(TablesName.getUserTable())); 
            while(rs.next()){
                allUser.add(new User (
                            rs.getString(1),

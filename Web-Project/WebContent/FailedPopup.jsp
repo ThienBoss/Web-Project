@@ -10,7 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <link rel="stylesheet" href="CSS/stylepopup1.css">
+        <link rel="stylesheet" href="CSS/stylepopup2.css">
     </head>
     <body>
         <script>
@@ -19,7 +19,7 @@
             }
             setTimeout(function() {
             document.location = "Login.jsp";
-             }, 1000);
+             }, 2000);
           window.onload = function() {
             togglePopup();
           };
@@ -27,10 +27,10 @@
         <div class="popup" id="popup-1">
         <div class="overlay"></div>
         <div class="content">
-          <div class="close-btn" onclick="togglePopup()">&times;</div>
-          <img src ="https://lh3.googleusercontent.com/proxy/v9umce5V1ug-_z7OnAisFQjkeaLhcq3G3GJyO7pzbzA0GRQtotl9omfrx87_r8_SHHJbqatfo1sOK_VPAVV7b8trMN0u457RTFwg0defNJMXTff9MjlKfw" width="100" height="100">
-          <h1>Popup title</h1>
-          <p>Popup content</p>
+          <img src ="https://lh3.googleusercontent.com/proxy/zAc16k9b-c-Mwb42npUX7H9HWKsCOeQKHxijSqorilSmCRl9Tw8Mc_WAc2rBTET53Mzt_USgP9hKho-V-stjypezFzcrqJE_jBGjtiGKxFJU0A8" width="100" height="100">
+          <h1>ERROR</h1>
+          <p>Invalid Username or Password</p>
+          <p>Please try again</p>
         </div>
       </div>
     </body>

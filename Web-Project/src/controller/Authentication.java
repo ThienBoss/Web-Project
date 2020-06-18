@@ -3,6 +3,7 @@ package controller;
 import java.io.IOException;
 
 import java.sql.SQLException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,7 +13,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import dao.StreamerDao;
 import dao.UserDao;
+import model.Streamer;
 import model.User;
 
 /**
@@ -21,7 +25,10 @@ import model.User;
 @WebServlet("/Authentication")
 public class Authentication extends HttpServlet {
     private UserDao userDao;
+    private StreamerDao streamerDao;
 	private static final long serialVersionUID = 1L;
+    private User currentUser;
+    private Streamer currentStreamer;
        
     /**
      * @throws ClassNotFoundException 
@@ -31,6 +38,8 @@ public class Authentication extends HttpServlet {
     public Authentication() throws ClassNotFoundException, SQLException {
         super();
         userDao = new UserDao();
+        streamerDao = new StreamerDao();
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -57,20 +66,46 @@ public class Authentication extends HttpServlet {
     }
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//doGet(request, response);
+		String address ="";
         String userName = request.getParameter("loginName");
         String password = request.getParameter("loginPassword");
-        String address = "";
-        if (userDao.validateLogin(userName, password)) {
-            address = "rentplayer2.jsp";
+        List<User> users;
+        List<Streamer> streamers;
+		if (userDao.validateLogin(userName, password)) {
+			try {
+			users = userDao.getAll();
+			System.out.println("Get all User !!");
             if (userDao.isStreamer()){
-                System.out.println("Welcome Streamer " + userName);
+                streamers = streamerDao.getAll();
+                for(Streamer s : streamers) {
+                    if(s.getUserName().equals(userName)) {
+                        currentStreamer = s; 
+                    }
+                }
+            Cookie streamerCookie = new Cookie("currentStreamer",currentStreamer.getUserName());
+            response.addCookie(streamerCookie);
+            request.getSession().setAttribute("currentStreamer", currentStreamer);
+            address ="Streamer.jsp";
+            System.out.println("Welcome Streamer " + userName);
             } else {
+                users = userDao.getAll();
+                for(User u : users) {
+                address = "rentplayer2.jsp";
                 System.out.println("Welcome User " + userName);
+                System.out.println("User Name : " + u.getFulName());
+                if(u.getUserName().equals(userName)){
+                    currentUser = u;
+                    System.out.println("User Name : " + currentUser.getFulName());
+                    }
+                }
+            Cookie userCookie = new Cookie("currentUser",currentUser.getUserName());
+            response.addCookie(userCookie);
+            request.getSession().setAttribute("currentUser", currentUser);
             }
-            Cookie c = new Cookie("user",userName);
-            response.addCookie(c);
-            request.getSession().setAttribute("user", userName);
+        } catch (SQLException e) {
+        	e.printStackTrace();
+        }
+            
             RequestDispatcher dispatcher = request.getRequestDispatcher(address);
             dispatcher.forward(request,response);
         } else {

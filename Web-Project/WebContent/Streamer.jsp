@@ -13,7 +13,7 @@
         
         <link rel = "stylesheet" type = "text/css" href = "CSS/stylebar.css">
         <link rel = "stylesheet" type = "text/css" href = "CSS/styleimage.css">
-        <link rel = "stylesheet" type = "text/css" href = "CSS/styleuser.css">
+        <link rel = "stylesheet" type = "text/css" href = "CSS/styleStreamer.css">
         <style>
         </style>
     </head>
@@ -33,21 +33,23 @@
         <nav id="nav">          
             <label class="logo">気持ち~</label>
             <ul>
-                <li><a href="User.jsp">User</a></li>
-                <li><a href="rentplayer2.jsp">Streamer</a></li>
-                <li><a href="buycard2.jsp">Buy Card</a></li>
-                <li><a href="Rank2.jsp">Ranking</a></li>
-                <li>Welcome,${currentUser.getUserName()}</li>
+                <li><a href="Streamer.jsp">User</a></li>
+                <li><a href="rentplayer3.jsp">Streamer</a></li>
+                <li><a href="buycard3.jsp">Buy Card</a></li>
+                <li><a href="Rank3.jsp">Ranking</a></li>
+                <li>Welcome Streamer, ${currentStreamer.getUserName()}</li>
+                <li><button name="logout" value="logout" >Log Out</button></li>
             </ul>
         </nav>
         
         <div class="box2">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTVT0eJX1GqU1D0NZy8aCRwo3cbdxUZ0C8ZhTCjXTWc4xbfsDcH&usqp=CAU" alt="" class="box2-img">
+            <img src=${currentStreamer.getImages()} alt="" class="box2-img">         
             <h1>MY INFORMATION</h1>
-            <h5>${currentUser.getUserName()}</h5>
-            <h5>${currentUser.getAge()}</h5>
-            <h5>${currentUser.getSex()}</h5>
-            <h5>${currentUser.getEmail()}</h5>
+            <h5>${currentStreamer.getFullName()}</h5>
+            <h5>${currentStreamer.getUserName()}</h5>
+            <h5>${currentStreamer.getAge()}</h5>
+            <h5>${currentStreamer.getSex()}</h5>
+            <h5>${currentStreamer.getEmail()}</h5>
         </div>
         
         <div class="box3">

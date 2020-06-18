@@ -23,7 +23,7 @@
                 <li><a href="rentplayer2.jsp">Streamer</a></li>
                 <li><a href="buycard2.jsp">Buy Card</a></li>
                 <li><a href="Rank2.jsp">Ranking</a></li>
-                <li>Welcome, ${user} </li>
+                <li>Welcome, ${currentUser.getUserName()} </li>
                
                 <li><button name="logout" value="logout">Log Out</button></li>
 				</form>
@@ -94,9 +94,10 @@
             List<Streamer> streamers = streamer.getAll(); 
             System.out.println("Get All User");
               for(Streamer s : streamers) {
+              String currentStreamerId = Integer.toString(s.getStreamerId());
             %>
 
-            <div class="box">
+            <div class="box" name= "currentStreamerID" value= <%=currentStreamerId%> >
                 <img src=<%=s.getImages()%> class ="box-image">
                 <table style="margin: 0 auto">
                     <tr>

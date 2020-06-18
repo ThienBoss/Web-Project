@@ -7,7 +7,11 @@ public class Query {
     public Query () throws ClassNotFoundException, SQLException {
      }
 
-    
+   public static String selectAllUser(String tableName) {
+    String selectUser = "SELECT * FROM " + tableName + " WHERE StreamerID = -1 ;";
+    return selectUser;
+   } 
+
     public static String selectAll (String tableName ) {
         String selectAll =  "SELECT * FROM " + tableName + ";";
         return selectAll;

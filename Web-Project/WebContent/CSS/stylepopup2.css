@@ -4,63 +4,74 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
 /* 
-    Created on : Jun 11, 2020, 6:40:32 PM
+    Created on : Jun 11, 2020, 2:01:02 PM
     Author     : ThanhLee
 */
+.popup .overlay {
+    position:fixed;
+    top:0px;
+    left:0px;
+    width:1000vw;
+    height:1000vh;
+    background:rgba(0,0,0,0.8);
+    z-index:1;
+    display:none;
+    filter: blur(20px);
+    pointer-events: none;
+    user-select: none;
+}
 
-*{
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+.popup .content {
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%) scale(0);
+    background: white;
+    width: 400px;
+    height:300px;
+    z-index:2;
+    text-align:center;
+    padding:20px;
+    box-sizing:border-box;
+    font-family:"Open Sans",sans-serif;
 }
-.container{
-	width:100%;
-	height:100vh;
-	background:url('https://lh3.googleusercontent.com/proxy/Zkql0DjAmMtvWLCO93Q86Y8l2NIJCX1WvmQqVQlpJpc5Nq6sTlesZfWDOPSL0ar30iyY3hfc9X1yRXd1_an5GmegzgYhJNQ7xHukyNsn9u41ked7gxOvCsFrLHxVFMuvoivaedO4ZGslBiz4yVytcIs6DA') center no-repeat;
-	background-size:cover;
+
+.popup .close-btn {
+    cursor:pointer;
+    position:absolute;
+    right:20px;
+    top:20px;
+    width:30px;
+    height:30px;
+    background: Black;
+    color:white;
+    font-size:25px;
+    font-weight:600;
+    line-height:30px;
+    text-align:center;
+    border-radius:50%;
 }
-.open{
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%,-50%);
-	padding: 5px 20px;
-	text-decoration: none;
-	color: #000;
-	background: #f6ff00;
-	font-size: 10px;
+
+.popup.active .overlay {
+    display:block;
 }
-#blur.active{
-	filter: blur(20px);
-	pointer-events: none;
-	user-select: none;
+
+.popup.active .content {
+    transition:all 300ms ease-in-out;
+    transform:translate(-50%,-50%) scale(1);
 }
-.close{
-	position: relative;
-	padding: 5px 20px;
-	display: inline-block;
-	margin-top: 20px;
-	text-decoration: none;
-	color: #fff;
-	background: #111;
+
+button {
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    padding:15px;
+    font-size:18px;
+    border:2px solid #222;
+    color:#222;
+    text-transform:uppercase;
+    font-weight:600;
+    background:#fff;
 }
-.modal{
-	position: fixed;
-	top: 40%;
-	left: 50%;
-	transform: translate(-50%,-50%);
-	width: 600px;
-	padding: 50px;
-	box-shadow: 0 5px 30px rgba(0,0,0,.30);
-	background: #fff;
-	visibility: hidden;
-	opacity: 0;
-	transition: .5s;
-}
-.modal.active{
-	top: 50%;
-	visibility: visible;
-	opacity: 1;
-	transition: .5s;
-        
-}
+
