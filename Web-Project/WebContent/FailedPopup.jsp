@@ -10,7 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <link rel="stylesheet" href="stylepopup1.css">
+        <link rel="stylesheet" href="CSS/stylepopup1.css">
     </head>
     <body>
         <script>

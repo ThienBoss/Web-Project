@@ -80,7 +80,7 @@ public class StreamerRegister extends HttpServlet {
             Streamer streamer = new Streamer(streamerUserName,streamerPassword,streamerName,streamerEmail,streamerAge,donated,streamerGender,streamerInfo,streamerImage,hirePrice,star,status,streamerLocation);
             streamerDao.update(streamer);
             System.out.println("Streamer Update !");
-            RequestDispatcher dispatcher = request.getRequestDispatcher("profile.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("profile2.jsp");
             dispatcher.forward(request,response);
         } catch (SQLException e) {
             e.printStackTrace();

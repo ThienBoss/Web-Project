@@ -80,7 +80,7 @@
             <form action="Authentication" method="get">
                 <input type="text" name="signUpUserName" placeholder="Username">
                 <input type="password" name="signUpPassword" placeholder="Password" onkeyup="checkReType()">
-                <input type="password" name="signUpRePassword" placeholder="Retype Password" onkeyup="checkReType()">
+                <input type="password" name= 1 placeholder="Retype Password" onkeyup="checkReType()">
                   <span id='message'></span>
                 <input type="text" name="signUpName" placeholder="Your Name" >
                 <input type="text" name="Age" placeholder="Age">

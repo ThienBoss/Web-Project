@@ -18,7 +18,7 @@ public class StreamerDao implements DAO<Streamer>, Closeable {
     private DatabaseConnection databaseConnection;
     private ResultSet rs ;
     private java.sql.Statement st ;
-    String[] listOfFields = {
+    String[] fields = {
             TablesName.getStreamerInfo(),
             TablesName.getStreamerImage(),
             TablesName.getStreamerHirePrice(),
@@ -62,8 +62,8 @@ public class StreamerDao implements DAO<Streamer>, Closeable {
 
         int streamerID = 0;
         String[] fields = {TablesName.getStreamerID()};
-        String[] id = {tablesname.getstreamerimage(),tablesname.getstreamerlocation()};
-        String[] conditions = {s.getimages(),s.getlocation()};
+        String[] id = {TablesName.getStreamerImage(),TablesName.getStreamerLocation()};
+        String[] conditions = {s.getImages(),s.getLocation()};
         String streamerEmail =  "" ;
         String[] streamerDetailInfo = {
            s.getInformation(),
@@ -74,7 +74,7 @@ public class StreamerDao implements DAO<Streamer>, Closeable {
            s.getLocation()
         };
 
-        st.executeUpdate(Query.insertToFields(TablesName.getStreamerTable(),listOfFields, streamerDetailInfo));          
+        st.executeUpdate(Query.insertToFields(TablesName.getStreamerTable(),fields, streamerDetailInfo));          
 
         try {
            rs = st.executeQuery(Query.selectHasCondition(
@@ -105,8 +105,8 @@ public class StreamerDao implements DAO<Streamer>, Closeable {
 	@Override
 	public void update(Streamer s) throws SQLException {
         int streamerID = 0;
-        String id = {TablesName.getStreamerId()}; 
-        String[] conditions = {s.getimages(),s.getlocation()};
+        String[] id = {TablesName.getStreamerID()}; 
+        String[] conditions = {s.getImages(),s.getLocation()};
         try {
            rs = st.executeQuery(Query.selectHasCondition(
                        fields,
@@ -115,7 +115,7 @@ public class StreamerDao implements DAO<Streamer>, Closeable {
                     while(rs.next()) {
                streamerID = rs.getInt(1);
         }
-        String[] streamerDetailInfo = {
+        String[] newValues = {
            s.getInformation(),
            s.getImages(),
            Integer.toString(s.getHirePrice()),
@@ -123,11 +123,16 @@ public class StreamerDao implements DAO<Streamer>, Closeable {
            Integer.toString(s.getStatus()),
            s.getLocation()
         };
-        System.out.println("StreamID : " + streamerID;
+ 
+        System.out.println("StreamID : " + streamerID);
         String[] streamerId = {TablesName.getStreamerID()};
         String[] streamerConditions = { Integer.toString(s.getStreamerId())};
-	    st.executeUpdate(Query.updateTable(TablesName.getStreamerTable(),listOfFields,streamerDetailInfo,streamerID,streamerConditions));
-	}
+	    st.executeUpdate(Query.updateTable(TablesName.getStreamerTable(),fields,newValues ,streamerId,streamerConditions));
+
+    	} catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
 	@Override
 	public void delete(Streamer s) throws SQLException {

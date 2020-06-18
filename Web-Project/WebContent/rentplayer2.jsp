@@ -100,13 +100,13 @@
                 <img src=<%=s.getImages()%> class ="box-image">
                 <table style="margin: 0 auto">
                     <tr>
-                        <td><%=s.getFullName()%></td>
+                        <td>Name: <%=s.getFullName()%></td>
                     </tr>
                     <tr>
-                        <td> <%=s.getAge()%></td>
+                        <td>Age: <%=s.getAge()%></td>
                     </tr>
                     <tr>
-                        <td><%=s.getHirePrice()%></td>
+                        <td>Hire Price: <%=s.getHirePrice()%> VND</td>
                     </tr>                   
                 </table>
                 <input style="margin-left: 30%;" type="button" value="RENT" onclick="location.href = 'Profile2.jsp'">
