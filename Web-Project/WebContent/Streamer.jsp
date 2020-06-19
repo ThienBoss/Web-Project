@@ -34,11 +34,14 @@
             <label class="logo">気持ち~</label>
             <ul>
                 <li><a href="Streamer.jsp">User</a></li>
-                <li><a href="rentplayer3.jsp">Streamer</a></li>
-                <li><a href="buycard3.jsp">Buy Card</a></li>
-                <li><a href="Rank3.jsp">Ranking</a></li>
+                <li><a href="buycard2.jsp">Buy Card</a></li>
+                <li><a href="Rank2.jsp">Ranking</a></li>
                 <li>Welcome Streamer, ${currentStreamer.getUserName()}</li>
-                <li><button name="logout" value="logout" >Log Out</button></li>
+                <li>
+                <form action="Logout" method="get">
+                <button name="logout" value="logout" >Log Out</button>
+                </form>
+                </li>
             </ul>
         </nav>
         
@@ -50,6 +53,7 @@
             <h5>${currentStreamer.getAge()}</h5>
             <h5>${currentStreamer.getSex()}</h5>
             <h5>${currentStreamer.getEmail()}</h5>
+            <h5><input type="button" name="change" value="Change Information" onclick="location.href='StreamerForm.jsp'"></h5>
         </div>
         
         <div class="box3">

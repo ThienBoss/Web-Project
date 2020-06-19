@@ -9,10 +9,10 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel = "stylesheet" type = "text/css" href = "stylebar.css">
-        <link rel = "stylesheet" type = "text/css" href = "styleimage.css">
-        <link rel = "stylesheet" type = "text/css" href = "stylerank.css">
-        <link rel = "stylesheet" type = "text/css" href = "stylepopup1.css">
+        <link rel = "stylesheet" type = "text/css" href = "CSS/stylebar.css">
+        <link rel = "stylesheet" type = "text/css" href = "CSS/styleimage.css">
+        <link rel = "stylesheet" type = "text/css" href = "CSS/stylerank.css">
+        <link rel = "stylesheet" type = "text/css" href = "CSS/stylepopup1.css">
         <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
         <title>Rank</title>
     </head>

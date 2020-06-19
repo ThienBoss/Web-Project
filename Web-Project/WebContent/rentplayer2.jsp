@@ -22,7 +22,7 @@
                 <li><a href="buycard3.jsp">Buy Card</a></li>
                 <li><a href="Rank3.jsp">Ranking</a></li>
                 <li>Welcome , ${currentUser.getUserName()}</li>
-                <form action="Logout" method="get">
+                <li><form action="Logout" method="get">
                 <li><button name="logout" value="logout">Log Out</button></li>
                 </form>
             </ul>

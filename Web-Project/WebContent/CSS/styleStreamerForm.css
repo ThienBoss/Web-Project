@@ -53,7 +53,7 @@ body{
 }
 .input-fields input[type = "text"], .box input[type = "password"]{
     border: 0;
-    background: black;
+    background: white;
     display: block;
     margin: 20px auto;
     text-align: center;
@@ -61,7 +61,7 @@ body{
     padding: 14px 10px;
     width: 200px;
     outline: none;
-    color: black;
+	color: black;
     border-radius: 24px;
     transition: 0.25s;
 }
@@ -111,15 +111,15 @@ body{
 
 ::-webkit-input-placeholder {
   /* Chrome/Opera/Safari */
-  color: black;
+	color: black;
 }
 ::-moz-placeholder {
   /* Firefox 19+ */
-  color: #c5ecfd;
+  color: black;
 }
 :-ms-input-placeholder {
   /* IE 10+ */
-  color: #c5ecfd;
+  color: white;
 }
 
 .btn {

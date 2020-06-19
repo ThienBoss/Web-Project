@@ -11,7 +11,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Register</title>
         <link rel = "stylesheet" type = "text/css" href = "CSS/stylebar.css">
-        <link rel = "stylesheet" type = "text/css" href = "CSS/stylelogin.css">
+        <link rel = "stylesheet" type = "text/css" href = "CSS/stylelogin1.css">
+        <link rel = "stylesheet" type = "text/css" href = "CSS/styleimage.css">
     </head>
     <body>
         <nav>          
@@ -71,7 +72,12 @@
                 }
             } 
         </script>
-        <div id="Signup" style="display: block" class="box">
+        <br>
+        <div>
+            <image class="my-image" src ="https://images.squarespace-cdn.com/content/v1/587d5638bebafb893ba15a0b/1573088220728-64WU096T1SRGVB36G5GS/ke17ZwdGBToddI8pDm48kBs79sXUYvB_GEGY8YPkL99Zw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PICpv8-W_xxthCDfgmyyqKhgglEIeFhlWpkB-zLgsCtoM/script-joinUs.png" width="800" height ="500">
+        </div>
+        <br>
+        <div id="Signup" style="display: block" class="box" style="top: 50%">
             <form action="StreamerRegister" method="get">
                 <input type="text" name="signUpUserName" placeholder="Username">
                 <input type="password" name="signUpPassword" placeholder="Password" onkeyup="checkReType()">

@@ -83,7 +83,7 @@ public class Authentication extends HttpServlet {
                     }
                 }
             Cookie streamerCookie = new Cookie("currentStreamer",currentStreamer.getUserName());
-            response.addCookie(streamerCookie);
+            //response.addCookie(streamerCookie);
             request.getSession().setAttribute("currentStreamer", currentStreamer);
             address ="Streamer.jsp";
             System.out.println("Welcome Streamer " + userName);
@@ -99,7 +99,7 @@ public class Authentication extends HttpServlet {
                     }
                 }
             Cookie userCookie = new Cookie("currentUser",currentUser.getUserName());
-            response.addCookie(userCookie);
+            //response.addCookie(userCookie);
             request.getSession().setAttribute("currentUser", currentUser);
             }
         } catch (SQLException e) {

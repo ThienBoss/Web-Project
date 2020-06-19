@@ -22,7 +22,7 @@
 			<li><a href="rentplayer2.jsp">Streamer</a></li>
 			<li><a href="buycard2.jsp">Buy Card</a></li>
 			<li><a href="Rank2.jsp">Ranking</a></li>
-			<li>Welcome, ${user}</li>
+			<li>Welcome, ${currentUser}</li>
 		</ul>
 	</nav>
 	<script>

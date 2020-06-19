@@ -18,10 +18,11 @@
 .form-popup {
   display: none;
   position: fixed;
-  bottom: 0;
+  bottom: 100px;
   right: 15px;
   border: 3px solid #f1f1f1;
   z-index: 9;
+  left: 40%;
 }
 
 /* Add styles to the form container */

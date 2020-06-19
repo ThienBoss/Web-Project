@@ -20,8 +20,8 @@ body{
     width: 300px;
     padding: 40px;
     position: absolute;
-    top: 50%;
-    left: 75%;
+    top: 400px;
+    left: 1300px;
     transform: translate(-50%, -50%);
     background: white;
     text-align: center;

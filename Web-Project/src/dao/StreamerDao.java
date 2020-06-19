@@ -18,7 +18,7 @@ public class StreamerDao implements DAO<Streamer>, Closeable {
     private DatabaseConnection databaseConnection;
     private ResultSet rs ;
     private java.sql.Statement st ;
-    String[] fields = {
+    String[] streamerFields = {
             TablesName.getStreamerInfo(),
             TablesName.getStreamerImage(),
             TablesName.getStreamerHirePrice(),
@@ -74,7 +74,7 @@ public class StreamerDao implements DAO<Streamer>, Closeable {
            s.getLocation()
         };
 
-        st.executeUpdate(Query.insertToFields(TablesName.getStreamerTable(),fields, streamerDetailInfo));          
+        st.executeUpdate(Query.insertToFields(TablesName.getStreamerTable(),streamerFields, streamerDetailInfo));          
 
         try {
            rs = st.executeQuery(Query.selectHasCondition(
@@ -109,7 +109,7 @@ public class StreamerDao implements DAO<Streamer>, Closeable {
         String[] conditions = {s.getImages(),s.getLocation()};
         try {
            rs = st.executeQuery(Query.selectHasCondition(
-                       fields,
+                       streamerFields,
                        TablesName.getStreamerTable(),
                        id, conditions ));
                     while(rs.next()) {
@@ -127,7 +127,7 @@ public class StreamerDao implements DAO<Streamer>, Closeable {
         System.out.println("StreamID : " + streamerID);
         String[] streamerId = {TablesName.getStreamerID()};
         String[] streamerConditions = { Integer.toString(s.getStreamerId())};
-	    st.executeUpdate(Query.updateTable(TablesName.getStreamerTable(),fields,newValues ,streamerId,streamerConditions));
+	    st.executeUpdate(Query.updateTable(TablesName.getStreamerTable(),streamerFields,newValues ,streamerId,streamerConditions));
 
     	} catch (SQLException e) {
             e.printStackTrace();

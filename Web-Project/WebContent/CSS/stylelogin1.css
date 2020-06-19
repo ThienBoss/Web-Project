@@ -13,14 +13,14 @@ and open the template in the editor.
     text-decoration: none;
 }
 body{
-    font-family: cursive;
+    font-family: sans-serif;
     background: whitesmoke;
 }
 .box{
     width: 300px;
     padding: 40px;
     position: absolute;
-    top: 50%;
+    top: 60%;
     left: 75%;
     transform: translate(-50%, -50%);
     background: white;

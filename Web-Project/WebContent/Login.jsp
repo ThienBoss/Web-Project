@@ -90,8 +90,8 @@
             </form>
                 <input type="button" value="LOGIN" onclick="login()">
         </div>
-
-        <footer id="footer">
+		<br>
+        <footer id="footer" style="margin-top: 5%">
             <div class="main-footer typo-light">
                 <div class="row">
                     <div class="widget">
